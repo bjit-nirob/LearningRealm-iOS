@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33343E27064FE37F4E7765C8 /* Pods_LearningRealm_LearningRealmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FF29E57183DBF85B3CE9AF /* Pods_LearningRealm_LearningRealmUITests.framework */; };
+		82F3A7A11CE8ECAB704AED24 /* Pods_LearningRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E6D824D2B2CC712EB6F98 /* Pods_LearningRealm.framework */; };
+		891603CC29715BF900C11AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603CB29715BF900C11AF8 /* AppDelegate.swift */; };
+		891603D029715BF900C11AF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603CF29715BF900C11AF8 /* ViewController.swift */; };
+		891603D329715BF900C11AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891603D129715BF900C11AF8 /* Main.storyboard */; };
+		891603D529715BF900C11AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891603D429715BF900C11AF8 /* Assets.xcassets */; };
+		891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891603D629715BF900C11AF8 /* LaunchScreen.storyboard */; };
+		891603E329715BF900C11AF8 /* LearningRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603E229715BF900C11AF8 /* LearningRealmTests.swift */; };
+		891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */; };
+		891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */; };
+		E16F90E33A9888C609DA8581 /* Pods_LearningRealmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D380DE04EC9CE80AB54D281 /* Pods_LearningRealmTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		891603DF29715BF900C11AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 891603C029715BF900C11AF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 891603C729715BF900C11AF8;
+			remoteInfo = LearningRealm;
+		};
+		891603E929715BF900C11AF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 891603C029715BF900C11AF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 891603C729715BF900C11AF8;
+			remoteInfo = LearningRealm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		151218D1E0C7DFDE711DCA24 /* Pods-LearningRealmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealmTests.release.xcconfig"; path = "Target Support Files/Pods-LearningRealmTests/Pods-LearningRealmTests.release.xcconfig"; sourceTree = "<group>"; };
+		42C83F738D9059D5456E33C1 /* Pods-LearningRealm-LearningRealmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm-LearningRealmUITests.debug.xcconfig"; path = "Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		64FF29E57183DBF85B3CE9AF /* Pods_LearningRealm_LearningRealmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealm_LearningRealmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B7E6D824D2B2CC712EB6F98 /* Pods_LearningRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		891603C829715BF900C11AF8 /* LearningRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		891603CB29715BF900C11AF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		891603CF29715BF900C11AF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		891603D229715BF900C11AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		891603D429715BF900C11AF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		891603D729715BF900C11AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		891603D929715BF900C11AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891603DE29715BF900C11AF8 /* LearningRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		891603E229715BF900C11AF8 /* LearningRealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmTests.swift; sourceTree = "<group>"; };
+		891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningRealmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITests.swift; sourceTree = "<group>"; };
+		891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8D380DE04EC9CE80AB54D281 /* Pods_LearningRealmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		913728AD61AFBA30D4B695D7 /* Pods-LearningRealm-LearningRealmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm-LearningRealmUITests.release.xcconfig"; path = "Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B12ABAA5F7A41D050063E62A /* Pods-LearningRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm.debug.xcconfig"; path = "Target Support Files/Pods-LearningRealm/Pods-LearningRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		D271977676D85BBD5900C11B /* Pods-LearningRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm.release.xcconfig"; path = "Target Support Files/Pods-LearningRealm/Pods-LearningRealm.release.xcconfig"; sourceTree = "<group>"; };
+		D5FD494FAA48B35D93993AC0 /* Pods-LearningRealmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealmTests.debug.xcconfig"; path = "Target Support Files/Pods-LearningRealmTests/Pods-LearningRealmTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		891603C529715BF900C11AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F3A7A11CE8ECAB704AED24 /* Pods_LearningRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603DB29715BF900C11AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E16F90E33A9888C609DA8581 /* Pods_LearningRealmTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603E529715BF900C11AF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33343E27064FE37F4E7765C8 /* Pods_LearningRealm_LearningRealmUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		891603BF29715BF900C11AF8 = {
+			isa = PBXGroup;
+			children = (
+				891603CA29715BF900C11AF8 /* LearningRealm */,
+				891603E129715BF900C11AF8 /* LearningRealmTests */,
+				891603EB29715BF900C11AF8 /* LearningRealmUITests */,
+				891603C929715BF900C11AF8 /* Products */,
+				F4128647540AE5C44B0EBA54 /* Pods */,
+				AD1BA20F1F37D36D7BA35EBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		891603C929715BF900C11AF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				891603C829715BF900C11AF8 /* LearningRealm.app */,
+				891603DE29715BF900C11AF8 /* LearningRealmTests.xctest */,
+				891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		891603CA29715BF900C11AF8 /* LearningRealm */ = {
+			isa = PBXGroup;
+			children = (
+				891603CB29715BF900C11AF8 /* AppDelegate.swift */,
+				891603CF29715BF900C11AF8 /* ViewController.swift */,
+				891603D129715BF900C11AF8 /* Main.storyboard */,
+				891603D429715BF900C11AF8 /* Assets.xcassets */,
+				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
+				891603D929715BF900C11AF8 /* Info.plist */,
+			);
+			path = LearningRealm;
+			sourceTree = "<group>";
+		};
+		891603E129715BF900C11AF8 /* LearningRealmTests */ = {
+			isa = PBXGroup;
+			children = (
+				891603E229715BF900C11AF8 /* LearningRealmTests.swift */,
+			);
+			path = LearningRealmTests;
+			sourceTree = "<group>";
+		};
+		891603EB29715BF900C11AF8 /* LearningRealmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */,
+				891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */,
+			);
+			path = LearningRealmUITests;
+			sourceTree = "<group>";
+		};
+		AD1BA20F1F37D36D7BA35EBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B7E6D824D2B2CC712EB6F98 /* Pods_LearningRealm.framework */,
+				64FF29E57183DBF85B3CE9AF /* Pods_LearningRealm_LearningRealmUITests.framework */,
+				8D380DE04EC9CE80AB54D281 /* Pods_LearningRealmTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4128647540AE5C44B0EBA54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B12ABAA5F7A41D050063E62A /* Pods-LearningRealm.debug.xcconfig */,
+				D271977676D85BBD5900C11B /* Pods-LearningRealm.release.xcconfig */,
+				42C83F738D9059D5456E33C1 /* Pods-LearningRealm-LearningRealmUITests.debug.xcconfig */,
+				913728AD61AFBA30D4B695D7 /* Pods-LearningRealm-LearningRealmUITests.release.xcconfig */,
+				D5FD494FAA48B35D93993AC0 /* Pods-LearningRealmTests.debug.xcconfig */,
+				151218D1E0C7DFDE711DCA24 /* Pods-LearningRealmTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		891603C729715BF900C11AF8 /* LearningRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891603F229715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealm" */;
+			buildPhases = (
+				2C176EDE3B0D563190ABC6F3 /* [CP] Check Pods Manifest.lock */,
+				891603C429715BF900C11AF8 /* Sources */,
+				891603C529715BF900C11AF8 /* Frameworks */,
+				891603C629715BF900C11AF8 /* Resources */,
+				4089575E2360111FA7568C27 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearningRealm;
+			productName = LearningRealm;
+			productReference = 891603C829715BF900C11AF8 /* LearningRealm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		891603DD29715BF900C11AF8 /* LearningRealmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891603F529715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealmTests" */;
+			buildPhases = (
+				DD514AE7F0D8280888C22E5C /* [CP] Check Pods Manifest.lock */,
+				891603DA29715BF900C11AF8 /* Sources */,
+				891603DB29715BF900C11AF8 /* Frameworks */,
+				891603DC29715BF900C11AF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				891603E029715BF900C11AF8 /* PBXTargetDependency */,
+			);
+			name = LearningRealmTests;
+			productName = LearningRealmTests;
+			productReference = 891603DE29715BF900C11AF8 /* LearningRealmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		891603E729715BF900C11AF8 /* LearningRealmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 891603F829715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealmUITests" */;
+			buildPhases = (
+				189A631A443370A831650736 /* [CP] Check Pods Manifest.lock */,
+				891603E429715BF900C11AF8 /* Sources */,
+				891603E529715BF900C11AF8 /* Frameworks */,
+				891603E629715BF900C11AF8 /* Resources */,
+				84691C0297B6D11999159B73 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				891603EA29715BF900C11AF8 /* PBXTargetDependency */,
+			);
+			name = LearningRealmUITests;
+			productName = LearningRealmUITests;
+			productReference = 891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		891603C029715BF900C11AF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					891603C729715BF900C11AF8 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					891603DD29715BF900C11AF8 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 891603C729715BF900C11AF8;
+					};
+					891603E729715BF900C11AF8 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 891603C729715BF900C11AF8;
+					};
+				};
+			};
+			buildConfigurationList = 891603C329715BF900C11AF8 /* Build configuration list for PBXProject "LearningRealm" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 891603BF29715BF900C11AF8;
+			productRefGroup = 891603C929715BF900C11AF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				891603C729715BF900C11AF8 /* LearningRealm */,
+				891603DD29715BF900C11AF8 /* LearningRealmTests */,
+				891603E729715BF900C11AF8 /* LearningRealmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		891603C629715BF900C11AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */,
+				891603D529715BF900C11AF8 /* Assets.xcassets in Resources */,
+				891603D329715BF900C11AF8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603DC29715BF900C11AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603E629715BF900C11AF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		189A631A443370A831650736 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearningRealm-LearningRealmUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C176EDE3B0D563190ABC6F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearningRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4089575E2360111FA7568C27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearningRealm/Pods-LearningRealm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearningRealm/Pods-LearningRealm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearningRealm/Pods-LearningRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84691C0297B6D11999159B73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD514AE7F0D8280888C22E5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearningRealmTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		891603C429715BF900C11AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891603D029715BF900C11AF8 /* ViewController.swift in Sources */,
+				891603CC29715BF900C11AF8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603DA29715BF900C11AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891603E329715BF900C11AF8 /* LearningRealmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		891603E429715BF900C11AF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */,
+				891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		891603E029715BF900C11AF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 891603C729715BF900C11AF8 /* LearningRealm */;
+			targetProxy = 891603DF29715BF900C11AF8 /* PBXContainerItemProxy */;
+		};
+		891603EA29715BF900C11AF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 891603C729715BF900C11AF8 /* LearningRealm */;
+			targetProxy = 891603E929715BF900C11AF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		891603D129715BF900C11AF8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891603D229715BF900C11AF8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		891603D629715BF900C11AF8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891603D729715BF900C11AF8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		891603F029715BF900C11AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		891603F129715BF900C11AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		891603F329715BF900C11AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12ABAA5F7A41D050063E62A /* Pods-LearningRealm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LearningRealm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		891603F429715BF900C11AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D271977676D85BBD5900C11B /* Pods-LearningRealm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LearningRealm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		891603F629715BF900C11AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5FD494FAA48B35D93993AC0 /* Pods-LearningRealmTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearningRealm.app/LearningRealm";
+			};
+			name = Debug;
+		};
+		891603F729715BF900C11AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 151218D1E0C7DFDE711DCA24 /* Pods-LearningRealmTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearningRealm.app/LearningRealm";
+			};
+			name = Release;
+		};
+		891603F929715BF900C11AF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42C83F738D9059D5456E33C1 /* Pods-LearningRealm-LearningRealmUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LearningRealm;
+			};
+			name = Debug;
+		};
+		891603FA29715BF900C11AF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913728AD61AFBA30D4B695D7 /* Pods-LearningRealm-LearningRealmUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjit.LearningRealmUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LearningRealm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		891603C329715BF900C11AF8 /* Build configuration list for PBXProject "LearningRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891603F029715BF900C11AF8 /* Debug */,
+				891603F129715BF900C11AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891603F229715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891603F329715BF900C11AF8 /* Debug */,
+				891603F429715BF900C11AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891603F529715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891603F629715BF900C11AF8 /* Debug */,
+				891603F729715BF900C11AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		891603F829715BF900C11AF8 /* Build configuration list for PBXNativeTarget "LearningRealmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				891603F929715BF900C11AF8 /* Debug */,
+				891603FA29715BF900C11AF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 891603C029715BF900C11AF8 /* Project object */;
+}
