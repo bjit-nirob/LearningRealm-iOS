@@ -114,9 +114,10 @@
 		891603CA29715BF900C11AF8 /* LearningRealm */ = {
 			isa = PBXGroup;
 			children = (
+				891603FD297162BB00C11AF8 /* ViewModel */,
+				891603FC297162B400C11AF8 /* View */,
+				891603FB297162AD00C11AF8 /* Model */,
 				891603CB29715BF900C11AF8 /* AppDelegate.swift */,
-				891603CF29715BF900C11AF8 /* ViewController.swift */,
-				891603D129715BF900C11AF8 /* Main.storyboard */,
 				891603D429715BF900C11AF8 /* Assets.xcassets */,
 				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
 				891603D929715BF900C11AF8 /* Info.plist */,
@@ -141,6 +142,29 @@
 			path = LearningRealmUITests;
 			sourceTree = "<group>";
 		};
+		891603FB297162AD00C11AF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		891603FC297162B400C11AF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				891603CF29715BF900C11AF8 /* ViewController.swift */,
+				891603D129715BF900C11AF8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		891603FD297162BB00C11AF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AD1BA20F1F37D36D7BA35EBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +185,6 @@
 				D5FD494FAA48B35D93993AC0 /* Pods-LearningRealmTests.debug.xcconfig */,
 				151218D1E0C7DFDE711DCA24 /* Pods-LearningRealmTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
