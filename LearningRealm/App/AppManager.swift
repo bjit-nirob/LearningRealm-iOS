@@ -6,10 +6,24 @@
 //
 
 import Foundation
-
+import UIKit
 
 final class AppManager {
     static let shared = AppManager()
+    
+    var isDarkMode: Bool {
+        if let window = UIApplication.shared.windows.first {
+            return window.traitCollection.userInterfaceStyle == .dark
+        }
+        return false
+    }
+    
+    var traitCollection: UITraitCollection? {
+        if let window = UIApplication.shared.windows.first {
+            return window.traitCollection
+        }
+        return nil
+    }
     
     init() {
         

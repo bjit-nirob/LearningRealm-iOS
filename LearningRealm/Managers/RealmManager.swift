@@ -10,11 +10,11 @@ import RealmSwift
 
 final class RealmManager {
     static let shared = RealmManager()
-    
-    var realm: Realm = try! Realm()
-    
+    var realm: Realm?
     init() {
-        
+        do {
+            realm = try? Realm()
+        }
     }
     
     func addData() {
