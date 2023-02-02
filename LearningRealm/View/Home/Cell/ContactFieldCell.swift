@@ -62,7 +62,6 @@ class ContactFieldCell: BaseCell {
             make.top.equalToSuperview().offset(8.s)
             make.trailing.equalToSuperview().offset(-0.s)
             make.bottom.lessThanOrEqualTo(-8.s)
-//            make.bottom.equalToSuperview().offset(-8.s)
             make.height.equalTo(40.s)
         }
     }

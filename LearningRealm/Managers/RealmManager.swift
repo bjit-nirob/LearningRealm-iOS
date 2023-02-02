@@ -17,7 +17,7 @@ final class RealmManager {
         }
     }
     
-    func addData() {
+    func addData(contactModel: ContactModel) {
         
     }
 }

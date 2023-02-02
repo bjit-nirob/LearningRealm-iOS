@@ -16,7 +16,7 @@ class ContactAddVC: BaseViewController {
         return tableView
     }()
     
-    var homeVM: HomeViewModel!
+    var contactVM: ContactViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class ContactAddVC: BaseViewController {
         setupUI()
         bindingModel()
         defineLayout()
-        loadData()
     }
     
     private func setupUI() {
@@ -46,7 +45,7 @@ class ContactAddVC: BaseViewController {
     }
     
     private func bindingModel() {
-        homeVM = HomeViewModel()
+        contactVM = ContactViewModel()
     }
     
     private func defineLayout() {
@@ -58,8 +57,8 @@ class ContactAddVC: BaseViewController {
         }
     }
     
-    private func loadData() {
-        
+    private func saveContact() {
+        contactVM.saveContact()
     }
     
     @objc private func cancelBtnTapped() {
@@ -67,7 +66,7 @@ class ContactAddVC: BaseViewController {
     }
     
     @objc private func doneBtnTapped() {
-        
+        self.saveContact()
     }
 
 }

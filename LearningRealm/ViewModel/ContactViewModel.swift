@@ -7,8 +7,13 @@
 
 import Foundation
 
-class HomeViewModel {
+class ContactViewModel {
     var contactModel: ContactModel?
     let alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
     
+    func saveContact() {
+        if let contactModel = contactModel {
+            RealmManager.shared.addData(contactModel: contactModel)
+        }
+    }
 }

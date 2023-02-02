@@ -16,7 +16,7 @@
 		891603E329715BF900C11AF8 /* LearningRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603E229715BF900C11AF8 /* LearningRealmTests.swift */; };
 		891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */; };
 		891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */; };
-		891603FF29716E3C00C11AF8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603FE29716E3C00C11AF8 /* HomeViewModel.swift */; };
+		891603FF29716E3C00C11AF8 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603FE29716E3C00C11AF8 /* ContactViewModel.swift */; };
 		8916040129716E4800C11AF8 /* SpecimenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8916040029716E4800C11AF8 /* SpecimenModel.swift */; };
 		893E1BF0298A6E4400A8DC62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */; };
 		893E1BF2298A70A500A8DC62 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */; };
@@ -79,7 +79,7 @@
 		891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningRealmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITests.swift; sourceTree = "<group>"; };
 		891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		891603FE29716E3C00C11AF8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		891603FE29716E3C00C11AF8 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		8916040029716E4800C11AF8 /* SpecimenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecimenModel.swift; sourceTree = "<group>"; };
 		893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		891603FD297162BB00C11AF8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				891603FE29716E3C00C11AF8 /* HomeViewModel.swift */,
+				891603FE29716E3C00C11AF8 /* ContactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -618,7 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89524FF72978023C0056637A /* UIFont+Extension.swift in Sources */,
-				891603FF29716E3C00C11AF8 /* HomeViewModel.swift in Sources */,
+				891603FF29716E3C00C11AF8 /* ContactViewModel.swift in Sources */,
 				898AF42E297177EC0068E4CA /* String+Extension.swift in Sources */,
 				891603D029715BF900C11AF8 /* ContactListVC.swift in Sources */,
 				896E3501298BAD5700869892 /* BaseCell.swift in Sources */,
