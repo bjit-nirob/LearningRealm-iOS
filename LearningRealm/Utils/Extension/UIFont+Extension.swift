@@ -32,24 +32,4 @@ extension UIFont {
     static func InterExtraBold(ofSize: CGFloat) -> UIFont {
         return UIFont(name: "Inter-ExtraBold", size: ofSize)!
     }
-    
-    static func RobotoRegular(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "Roboto-Regular", size: ofSize)!
-    }
-    
-    static func HiraginoSansW3(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "HiraginoSans-W3", size: ofSize)!
-    }
-    
-    static func HiraginoSansW6(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "HiraginoSans-W6", size: ofSize)!
-    }
-    
-    static func HiraginoSansW7(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "HiraginoSans-W7", size: ofSize)!
-    }
-    
-    static func BarlowMedium(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "Barlow-Medium", size: ofSize)!
-    }
 }

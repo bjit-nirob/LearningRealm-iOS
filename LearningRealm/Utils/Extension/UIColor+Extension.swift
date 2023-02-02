@@ -25,6 +25,7 @@ extension UIColor {
        )
    }
     
+    // swiftlint:disable large_tuple
     func blend(with color: UIColor, intensity: CGFloat = 1.0) -> UIColor {
         let intensity1: CGFloat = 1.0
         let total = intensity1 + intensity
@@ -42,17 +43,17 @@ extension UIColor {
     }
     
     static func from(hex: String) -> UIColor {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
-        if (cString.hasPrefix("#")) {
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
 
-        if ((cString.count) != 6) {
+        if (cString.count) != 6 {
             return UIColor.gray
         }
 
-        var rgbValue:UInt64 = 0
+        var rgbValue: UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
 
         return UIColor(
@@ -66,7 +67,7 @@ extension UIColor {
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
-        if (hexString.hasPrefix("#")) {
+        if hexString.hasPrefix("#") {
             scanner.scanLocation = 1
         }
         var color: UInt32 = 0
@@ -78,15 +79,15 @@ extension UIColor {
         let red   = CGFloat(r) / 255.0
         let green = CGFloat(g) / 255.0
         let blue  = CGFloat(b) / 255.0
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
         getRed(&r, green: &g, blue: &b, alpha: &a)
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-        return String(format:"#%06x", rgb)
+        let rgb: Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format: "#%06x", rgb)
     }
 }

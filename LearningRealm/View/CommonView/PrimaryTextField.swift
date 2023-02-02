@@ -21,24 +21,24 @@ class PrimaryTextField: UITextField {
     private var leftSpace: CGFloat = 15.s
     
     public override init(frame: CGRect) {
-        super.init(frame:frame)
+        super.init(frame: frame)
         
         initializeSetup()
-        //print("UIPrimaryTextField-init-frame")
+//        print("UIPrimaryTextField-init-frame")
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        //initializeSetup()
-        //print("UIPrimaryTextField-init-coder")
+//        initializeSetup()
+//        print("UIPrimaryTextField-init-coder")
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
         
         initializeSetup()
-        //print("UIPrimaryTextField-awakeFromNib")
+//        print("UIPrimaryTextField-awakeFromNib")
     }
     
     open override func layoutSubviews() {
@@ -55,7 +55,7 @@ class PrimaryTextField: UITextField {
         self.autocorrectionType         = .no
         self.clearButtonMode            = .whileEditing
         self.contentVerticalAlignment   = .center
-        self.font                       = .HiraginoSansW6(ofSize: 21.sp)
+        self.font                       = .InterMedium(ofSize: 21.sp)
         self.textColor                  = .gray
         self.tintColor                  = .gray
 //        self.letterSpacing(spacing: 1.0)
@@ -122,9 +122,9 @@ class PrimaryTextField: UITextField {
     
     public func setLeftIcon(_ image: UIImage, _userInteractionEnabled: Bool = false) {
         
-        //let iconSize:CGSize = CGSize(width: self.bounds.size.height*0.4, height: self.bounds.size.height*0.4)
-        let iconSize:CGSize = image.size
-        //print("setLeftIcon image size \(iconSize.width) \(iconSize.height)")
+//        let iconSize:CGSize = CGSize(width: self.bounds.size.height*0.4, height: self.bounds.size.height*0.4)
+        let iconSize: CGSize = image.size
+//        print("setLeftIcon image size \(iconSize.width) \(iconSize.height)")
         let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize.width + leftSpace, height: iconSize.height+0.0))
         
         let iconView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: iconSize.width, height: iconSize.height))
@@ -144,7 +144,7 @@ class PrimaryTextField: UITextField {
     
     public func setRightIcon(_ image: UIImage?, _userInteractionEnabled: Bool = false) {
         
-        let iconSize:CGSize = image?.size ?? CGSize(width: 0, height: 0)
+        let iconSize: CGSize = image?.size ?? CGSize(width: 0, height: 0)
         
         let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize.width+9.0, height: iconSize.height+0.0))
         
@@ -158,14 +158,14 @@ class PrimaryTextField: UITextField {
         self.rightView = iconContainerView
         self.rightViewMode = .always
         
-        //textFieldRightButtonClicked
+//        textFieldRightButtonClicked
         let gesture = UITapGestureRecognizer.init(target: self, action: #selector(textFieldRightButtonClicked(gesture:)))
         gesture.numberOfTapsRequired = 1
         iconContainerView.addGestureRecognizer(gesture)
     }
     
     @objc private func textFieldDidChanged(textField: PrimaryTextField) {
-        //print("textFieldDidChanged \(textField.text ?? "nulllll")")
+//        print("textFieldDidChanged \(textField.text ?? "nulllll")")
         textFDelegate?.textFieldDidChanged?(textField: textField)
     }
     
@@ -177,7 +177,7 @@ class PrimaryTextField: UITextField {
     }
     
     @objc private func textFieldLeftButtonClicked(gesture: UITapGestureRecognizer) {
-        //print("optionClicked tag \(gesture.tag)")
+//        print("optionClicked tag \(gesture.tag)")
         guard let method = textFDelegate?.textFieldLeftButtonClicked else {
             return
         }
@@ -185,22 +185,22 @@ class PrimaryTextField: UITextField {
     }
     
     public func addSelectedProperties() {
-        //addBorderProperties(borderWidth: 2.0, borderColor: NHTheme.shared.THEME_DEEP_GREEN, shadowColor: NHTheme.shared.THEME_PURE_WHITE)
+//        addBorderProperties(borderWidth: 2.0, borderColor: NHTheme.shared.THEME_DEEP_GREEN, shadowColor: NHTheme.shared.THEME_PURE_WHITE)
         textFieldDidBeginEditing(self)
     }
     
     public func addNonSelectedProperties() {
-        //clearBorderProperties()
+//        clearBorderProperties()
         textFieldDidEndEditing(self)
     }
     
-    private func addBorderProperties(borderWidth:CGFloat, borderColor:UIColor, shadowColor:UIColor) {
+    private func addBorderProperties(borderWidth: CGFloat, borderColor: UIColor, shadowColor: UIColor) {
         
-        //To apply border
-        //self.layer.borderWidth = borderWidth
-        //self.layer.borderColor = borderColor.cgColor
+//        To apply border
+//        self.layer.borderWidth = borderWidth
+//        self.layer.borderColor = borderColor.cgColor
         
-        //To apply Shadow
+//        To apply Shadow
         self.layer.shadowOpacity = 0.15
         self.layer.shadowRadius = 3.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0) // Use any CGSize
@@ -211,7 +211,7 @@ class PrimaryTextField: UITextField {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 3.0
         
-        //To apply Shadow
+//        To apply Shadow
         self.layer.masksToBounds = false
         self.layer.shadowOpacity = 0.15
         self.layer.shadowRadius = 6.0
@@ -221,10 +221,10 @@ class PrimaryTextField: UITextField {
     
     private func clearBorderProperties() {
         
-        //To apply border
+//        To apply border
         self.layer.borderColor = UIColor.clear.cgColor
         
-        //To apply Shadow
+//        To apply Shadow
         self.layer.shadowOpacity = 0.0
         self.layer.shadowRadius = 0.0
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0) // Use any CGSize
@@ -247,11 +247,11 @@ extension PrimaryTextField: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //print("textFieldShouldBeginEditing")
-        guard let method = textFDelegate?.textFieldShouldBeginEditing else {
+//        print("textFieldShouldBeginEditing")
+        guard let method = textFDelegate?.textFieldShouldBeginEditing, let field = textField as? PrimaryTextField else {
             return true
         }
-        return method(textField as! PrimaryTextField)
+        return method(field)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -262,11 +262,11 @@ extension PrimaryTextField: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //print("textFieldShouldBeginEditing")
-        guard let method = textFDelegate?.textFieldShouldReturn else {
+//        print("textFieldShouldBeginEditing")
+        guard let method = textFDelegate?.textFieldShouldReturn, let field = textField as? PrimaryTextField else {
             return true
         }
-        return method(textField as! PrimaryTextField, range, string)
+        return method(field, range, string)
     }
     
 }

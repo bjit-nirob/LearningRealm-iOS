@@ -13,16 +13,16 @@ struct AppConstants {
 }
 
 struct Defaults {
-    static func savePost(_ isCheck:Bool) {
+    static func savePost(_ isCheck: Bool) {
         UserDefaults.standard.set(isCheck, forKey: "FIRST_POST_CHECK")
         UserDefaults.standard.synchronize()
     }
     
-    static func hasPost() -> Bool{
+    static func hasPost() -> Bool {
        return UserDefaults.standard.bool(forKey: "FIRST_POST_CHECK")
     }
     
-    static func saveIsCheckPost(_ isCheck:Bool) {
+    static func saveIsCheckPost(_ isCheck: Bool) {
         UserDefaults.standard.set(isCheck, forKey: "IS_CHECK_POST")
         UserDefaults.standard.synchronize()
     }
@@ -31,7 +31,7 @@ struct Defaults {
         return UserDefaults.standard.bool(forKey: "IS_CHECK_POST")
     }
     
-    static func setPostCount(_ count:Int) {
+    static func setPostCount(_ count: Int) {
         UserDefaults.standard.set(count, forKey: "COUNT_POST")
         UserDefaults.standard.synchronize()
     }
@@ -52,9 +52,10 @@ struct AppColors {
     static let red = UIColor(red: 255.0/255.0, green: 0.0, blue: 0.0, alpha: 1.0)
     static let gray = UIColor.gray
     static let blueText = UIColor.init(hexString: "#3385FF")
-    static let background = UIColor.gray
+    static let background = UIColor(named: "Background") ?? UIColor.clear
     static let placeholder = UIColor.gray
-    static let primaryColor = UIColor.gray
+    static let primaryColor = UIColor.white
+    static let accentColor = UIColor(named: "AccentColor") ?? UIColor.clear
 
 }
 
@@ -168,14 +169,10 @@ enum AppTexts: String {
 }
 
 enum AppImages: String {
-    //common
+//    common
     case defaultProfile = "default_profile"
-    // Login
+//    Login
     case logo = "Logo"
-    case arrowBack = "ArrowBack"
-    case backBlack = "back"
-    case combinedLogo = "CombinedLogo"
-    case appBG = "AppBG"
 }
 
 struct APIConstants {

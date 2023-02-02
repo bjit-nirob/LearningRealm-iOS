@@ -18,14 +18,10 @@ class SizeConfig {
     static var scaleText: Double = 1.0
     
     static var bottomBarHeight: CGFloat {
-        get {
-            return 50.s + SizeConfig.padding.bottom
-        }
+        return 50.s + SizeConfig.padding.bottom
     }
     static var navBarHeight: CGFloat {
-        get {
-            return 50.s + SizeConfig.padding.top
-        }
+        return 50.s + SizeConfig.padding.top
     }
     
     init() {

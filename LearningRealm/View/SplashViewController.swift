@@ -6,20 +6,32 @@
 //
 
 import UIKit
+import SnapKit
 
 class SplashViewController: BaseViewController {
+    private let splashLbl: UILabel = {
+        let label = UIView.createLabel("Splash Screen")
+        label.font = .InterMedium(ofSize: 16.sp)
+        label.textColor = AppColors.accentColor
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        addBG()
+        addBG(color: AppColors.background)
+        
+        [splashLbl].forEach { view in
+            self.view.addSubview(view)
+        }
         
         bindingModel()
         defineLayout()
         
-        let seconds = 2.0
+        let seconds = 1.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [weak self] in
             self?.decideAction()
         }
@@ -30,7 +42,9 @@ class SplashViewController: BaseViewController {
     }
     
     private func defineLayout() {
-        
+        splashLbl.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
     
     private func decideAction() {

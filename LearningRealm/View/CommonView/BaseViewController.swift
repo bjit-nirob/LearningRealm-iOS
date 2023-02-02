@@ -12,7 +12,7 @@ import MBProgressHUD
 class BaseViewController: UIViewController {
 
     var navBarHeight: CGFloat!
-    // MARK: -Super Methods
+    // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppColors.background
@@ -45,12 +45,8 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func addBG(imageName:AppImages? = .appBG) {
-        let bgImgV = UIView.createImageView(imageName: imageName)
-        self.view.addSubview(bgImgV)
-        bgImgV.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalToSuperview()
-        }
+    func addBG(color: UIColor) {
+        self.view.backgroundColor = color
     }
     
     func showHUD() {

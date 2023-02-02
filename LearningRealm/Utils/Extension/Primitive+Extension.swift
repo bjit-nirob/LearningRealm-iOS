@@ -37,4 +37,3 @@ extension Double {
     var sw: CGFloat { return SizeConfig.screenWidth * CGFloat(self) }
     var sh: CGFloat { return SizeConfig.screenHeight * CGFloat(self) }
 }
-

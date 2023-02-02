@@ -225,53 +225,6 @@ extension UIView {
             self?.layer.add(orbit, forKey: "orbit")
         }
     }
-    
-    func animateRotation(duration: TimeInterval, repeat: Bool, completion: ((Bool) -> Void)?) {
-
-        var options = UIView.KeyframeAnimationOptions(rawValue: UIView.AnimationOptions.curveLinear.rawValue)
-
-        if `repeat` {
-            options.insert(.repeat)
-        }
-
-        UIView.animateKeyframes(withDuration: duration, delay: 0, options: options, animations: {
-
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
-            })
-
-            UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-            })
-
-            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 3*CGFloat.pi/2)
-            })
-
-            UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 2*CGFloat.pi)
-            })
-            
-            UIView.addKeyframe(withRelativeStartTime: 1, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 5*CGFloat.pi/2)
-            })
-            
-            UIView.addKeyframe(withRelativeStartTime: 1.25, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 3*CGFloat.pi)
-            })
-            UIView.addKeyframe(withRelativeStartTime: 1.5, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 7*CGFloat.pi/2)
-            })
-            UIView.addKeyframe(withRelativeStartTime: 1.75, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 4*CGFloat.pi)
-            })
-            
-            UIView.addKeyframe(withRelativeStartTime: 2, relativeDuration: 0.25, animations: {
-                self.transform = CGAffineTransform(rotationAngle: 9*CGFloat.pi/2)
-            })
-            
-        }, completion: completion)
-    }
 }
 
 extension UIView {
@@ -289,17 +242,6 @@ extension UIView {
         self.subviews.forEach { (item) in
             item.removeFromSuperview()
         }
-    }
-    
-//    Constraints a view to its superview
-    func constraintToSuperView() {
-        guard let superview = superview else { return }
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-        leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-        rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
     }
     
 }
@@ -510,35 +452,19 @@ extension UIView {
         return scrollView
     }
     
-    static func createTimePicker() -> UIDatePicker {
-        let dp = UIDatePicker(frame: CGRect(x: 0, y: 0, width: SizeConfig.screenWidth, height: 30.s))
-        dp.datePickerMode = UIDatePicker.Mode.time
-        dp.translatesAutoresizingMaskIntoConstraints = false
-        dp.locale =  Locale(identifier: "ja_JP")
-        dp.minuteInterval = 15
-        if #available(iOS 13.4, *) {
-            dp.preferredDatePickerStyle = .wheels
-        }
-        return dp
-    }
-}
-
-extension UIView {
-    var globalPoint: CGPoint? {
-        return self.superview?.convert(self.frame.origin, to: nil)
-    }
-
-    var globalFrame: CGRect? {
-        return self.superview?.convert(self.frame, to: nil)
-    }
-}
-
-extension UIView {
     func visiblity(gone: Bool, dimension: CGFloat = 0.0, attribute: NSLayoutConstraint.Attribute = .height) {
         if let constraint = (self.constraints.filter { $0.firstAttribute == attribute}.first) {
             constraint.constant = gone ? 0.0 : dimension
             self.layoutIfNeeded()
             self.isHidden = gone
         }
+    }
+    
+    var globalPoint: CGPoint? {
+        return self.superview?.convert(self.frame.origin, to: nil)
+    }
+
+    var globalFrame: CGRect? {
+        return self.superview?.convert(self.frame, to: nil)
     }
 }

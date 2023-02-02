@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField {
 
-    func setAttributedPlaceholder(_ text:String, _ color:UIColor? = AppColors.placeholder){
+    func setAttributedPlaceholder(_ text: String, _ color: UIColor? = AppColors.placeholder) {
         attributedPlaceholder = NSAttributedString(
             string: text,
             attributes: [NSAttributedString.Key.foregroundColor: color!]
@@ -25,13 +25,13 @@ extension UITextField {
         print("Nirob test remove layer end")
         let border = CALayer()
         border.borderColor = color
-        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width:  self.frame.size.width, height: self.frame.size.height)
+        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = borderWidth
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
     
-    func setUnderLine(height: CGFloat, color: UIColor){
+    func setUnderLine(height: CGFloat, color: UIColor) {
         removeUnderLine()
         let bottomLine = UIView()
         bottomLine.tag = 101
@@ -48,7 +48,7 @@ extension UITextField {
         }
     }
     
-    func setLeftPaddingPoints(_ amount: CGFloat){
+    func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
@@ -72,8 +72,8 @@ extension UITextField {
             attributedString = NSMutableAttributedString(string: labelText)
         }
         
-        //Letter Spacing Attributed
-        attributedString.addAttribute(NSAttributedString.Key.kern, value: spacing, range: NSMakeRange(0, attributedString.length))
+//        Letter Spacing Attributed
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: spacing, range: NSRange(location: 0, length: attributedString.length))
         attributedText = attributedString
     }
 }

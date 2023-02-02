@@ -28,6 +28,12 @@
 		89524FF52978023C0056637A /* Primitive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF22978023C0056637A /* Primitive+Extension.swift */; };
 		89524FF62978023C0056637A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF32978023C0056637A /* UIColor+Extension.swift */; };
 		89524FF72978023C0056637A /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF42978023C0056637A /* UIFont+Extension.swift */; };
+		896E34F0298B5A9A00869892 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34E8298B5A9A00869892 /* Inter-Medium.ttf */; };
+		896E34F1298B5A9A00869892 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34E9298B5A9A00869892 /* Inter-Light.ttf */; };
+		896E34F2298B5A9A00869892 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EA298B5A9A00869892 /* Inter-Bold.ttf */; };
+		896E34F3298B5A9A00869892 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EB298B5A9A00869892 /* Inter-Regular.ttf */; };
+		896E34F4298B5A9A00869892 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */; };
+		896E34F5298B5A9A00869892 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */; };
 		898AF428297175A00068E4CA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF427297175A00068E4CA /* RealmManager.swift */; };
 		898AF42B297177000068E4CA /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF42A297177000068E4CA /* AppManager.swift */; };
 		898AF42E297177EC0068E4CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF42D297177EC0068E4CA /* String+Extension.swift */; };
@@ -79,6 +85,12 @@
 		89524FF22978023C0056637A /* Primitive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitive+Extension.swift"; sourceTree = "<group>"; };
 		89524FF32978023C0056637A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		89524FF42978023C0056637A /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		896E34E8298B5A9A00869892 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		896E34E9298B5A9A00869892 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		896E34EA298B5A9A00869892 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		896E34EB298B5A9A00869892 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		898AF427297175A00068E4CA /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		898AF42A297177000068E4CA /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		898AF42D297177EC0068E4CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -142,15 +154,16 @@
 		891603CA29715BF900C11AF8 /* LearningRealm */ = {
 			isa = PBXGroup;
 			children = (
-				898AF429297176E60068E4CA /* App */,
-				898AF4262971758E0068E4CA /* Utils */,
-				898AF425297175880068E4CA /* Managers */,
-				891603FD297162BB00C11AF8 /* ViewModel */,
-				891603FC297162B400C11AF8 /* View */,
-				891603FB297162AD00C11AF8 /* Model */,
-				891603D429715BF900C11AF8 /* Assets.xcassets */,
-				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
 				891603D929715BF900C11AF8 /* Info.plist */,
+				891603D429715BF900C11AF8 /* Assets.xcassets */,
+				898AF429297176E60068E4CA /* App */,
+				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
+				898AF425297175880068E4CA /* Managers */,
+				891603FB297162AD00C11AF8 /* Model */,
+				896E34E4298B5A8400869892 /* Resources */,
+				898AF4262971758E0068E4CA /* Utils */,
+				891603FC297162B400C11AF8 /* View */,
+				891603FD297162BB00C11AF8 /* ViewModel */,
 			);
 			path = LearningRealm;
 			sourceTree = "<group>";
@@ -205,6 +218,35 @@
 				893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */,
 			);
 			path = CommonView;
+			sourceTree = "<group>";
+		};
+		896E34E4298B5A8400869892 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E5298B5A9A00869892 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		896E34E5298B5A9A00869892 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E7298B5A9A00869892 /* Inter-Font */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		896E34E7298B5A9A00869892 /* Inter-Font */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E8298B5A9A00869892 /* Inter-Medium.ttf */,
+				896E34E9298B5A9A00869892 /* Inter-Light.ttf */,
+				896E34EA298B5A9A00869892 /* Inter-Bold.ttf */,
+				896E34EB298B5A9A00869892 /* Inter-Regular.ttf */,
+				896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */,
+				896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */,
+			);
+			path = "Inter-Font";
 			sourceTree = "<group>";
 		};
 		898AF425297175880068E4CA /* Managers */ = {
@@ -380,8 +422,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896E34F2298B5A9A00869892 /* Inter-Bold.ttf in Resources */,
+				896E34F1298B5A9A00869892 /* Inter-Light.ttf in Resources */,
+				896E34F0298B5A9A00869892 /* Inter-Medium.ttf in Resources */,
+				896E34F5298B5A9A00869892 /* Inter-SemiBold.ttf in Resources */,
+				896E34F4298B5A9A00869892 /* Inter-ExtraBold.ttf in Resources */,
 				891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */,
 				891603D529715BF900C11AF8 /* Assets.xcassets in Resources */,
+				896E34F3298B5A9A00869892 /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +761,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPB864GBRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -740,6 +789,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPB864GBRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

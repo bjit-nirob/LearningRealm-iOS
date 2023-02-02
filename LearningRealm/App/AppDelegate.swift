@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let _ = SizeConfig.init()
+        _ = SizeConfig.init()
         
         setSplashViewController()
         
@@ -41,11 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Custom methods
     
     private func setSplashViewController() {
-        
+        let vc = SplashViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = nvc
+        self.window?.makeKeyAndVisible()
     }
     
     public func setHomeViewController() {
-        
+        let vc = HomeViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = nvc
+        self.window?.makeKeyAndVisible()
     }
 
 }
