@@ -8,12 +8,11 @@
 import UIKit
 import SnapKit
 
-class SplashViewController: BaseViewController {
+class SplashVC: BaseViewController {
     private let splashLbl: UILabel = {
-        let label = UIView.createLabel("Splash Screen")
+        let label = UIView.createLabel("Welcome to my HEAVEN!")
         label.font = .InterMedium(ofSize: 16.sp)
         label.textColor = AppColors.accentColor
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -31,7 +30,7 @@ class SplashViewController: BaseViewController {
         bindingModel()
         defineLayout()
         
-        let seconds = 1.0
+        let seconds = 0.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [weak self] in
             self?.decideAction()
         }
@@ -48,7 +47,7 @@ class SplashViewController: BaseViewController {
     }
     
     private func decideAction() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.setHomeViewController()
             }

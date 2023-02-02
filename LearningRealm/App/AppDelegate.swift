@@ -41,14 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Custom methods
     
     private func setSplashViewController() {
-        let vc = SplashViewController()
+        let vc = SplashVC()
         let nvc = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = nvc
         self.window?.makeKeyAndVisible()
     }
     
     public func setHomeViewController() {
-        let vc = HomeViewController()
+        let vc = ContactListVC()
         let nvc = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = nvc
         self.window?.makeKeyAndVisible()

@@ -42,8 +42,8 @@ class PrimaryTextField: UITextField {
     }
     
     open override func layoutSubviews() {
+        setUnderLine(height: 1.s, color: AppColors.gray)
         super.layoutSubviews()
-        
     }
     
     private func initializeSetup() {
@@ -55,11 +55,11 @@ class PrimaryTextField: UITextField {
         self.autocorrectionType         = .no
         self.clearButtonMode            = .whileEditing
         self.contentVerticalAlignment   = .center
-        self.font                       = .InterMedium(ofSize: 21.sp)
-        self.textColor                  = .gray
-        self.tintColor                  = .gray
+        self.font                       = .InterRegular(ofSize: 20.sp)
+        self.textColor                  = AppColors.accentColor
+        self.tintColor                  = AppColors.accentColor
 //        self.letterSpacing(spacing: 1.0)
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: AppColors.gray, NSAttributedString.Key.kern: 1.0])
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.kern: 1.0])
         self.backgroundColor            = UIColor.clear
         
         self.setUnderLine(height: 1.0.s, color: AppColors.gray)
