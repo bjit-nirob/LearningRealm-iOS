@@ -17,6 +17,7 @@ class ContactAddVC: BaseViewController {
     }()
     
     var contactVM: ContactViewModel!
+    var didComplete: ((Bool) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +64,13 @@ class ContactAddVC: BaseViewController {
     
     @objc private func cancelBtnTapped() {
         self.dismiss(animated: true)
+        didComplete?(false)
     }
     
     @objc private func doneBtnTapped() {
         self.saveContact()
+        self.dismiss(animated: true)
+        didComplete?(true)
     }
 
 }
@@ -88,7 +92,23 @@ extension ContactAddVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactFieldCell.identifier, for: indexPath) as? ContactFieldCell else {
             fatalError("ContactFieldCell does not created properly")
         }
+        cell.cellDelegate = self
         cell.setupCell(indexPath: indexPath)
         return cell
+    }
+}
+
+extension ContactAddVC: ContactFieldCellDelegate {
+    func textFieldDidChanged(textField: PrimaryTextField) {
+        switch textField.tag {
+        case 0:
+            contactVM.contactModel?.firstName = textField.text
+        case 1:
+            contactVM.contactModel?.lastName = textField.text
+        case 2:
+            contactVM.contactModel?.mobNumber = textField.text
+        default:
+            print("Nothing is happened")
+        }
     }
 }

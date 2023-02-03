@@ -16,7 +16,7 @@ class ContactListVC: BaseViewController {
         return tableView
     }()
     
-    var homeVM: HomeViewModel!
+    var contactVM: ContactViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class ContactListVC: BaseViewController {
     }
     
     private func bindingModel() {
-        homeVM = HomeViewModel()
+        contactVM = ContactViewModel()
     }
     
     private func defineLayout() {
@@ -58,11 +58,17 @@ class ContactListVC: BaseViewController {
     }
     
     private func loadData() {
-        
+        contactVM.loadAllContact()
+        contactTableView.reloadData()
     }
     
     @objc private func addBtnTapped() {
         let vc = ContactAddVC()
+        vc.didComplete = {[weak self] complete in
+            if complete {
+                self?.loadData()
+            }
+        }
         let nvc = UINavigationController(rootViewController: vc)
         self.present(nvc, animated: true)
     }
@@ -75,26 +81,31 @@ extension ContactListVC: UITableViewDelegate {
 
 extension ContactListVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return homeVM.alphabet.count
+        return contactVM.allContactModel.keys.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let keys = contactVM.allContactModel.keys
+        let keyArray = Array(keys)
+        return contactVM.allContactModel[keyArray[section]]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as? ContactCell else {
             fatalError("ContactCell does not created properly")
         }
-        cell.setupCell(indexPath: indexPath)
+        let keys = contactVM.allContactModel.keys
+        let keyArray = Array(keys)
+        let contactModel = contactVM.allContactModel[keyArray[indexPath.section]]?[indexPath.row]
+        cell.setupCell(model: contactModel, indexPath: indexPath)
         return cell
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return homeVM.alphabet
+        return contactVM.alphabet
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return homeVM.alphabet[section]
+        return contactVM.alphabet[section]
     }
 }

@@ -17,7 +17,22 @@ final class RealmManager {
         }
     }
     
-    func addData(contactModel: ContactModel) {
-        
+    func addContactModel(contactModel: ContactModel) {
+        try? realm?.write({
+            realm?.add(contactModel)
+        })
     }
+    
+    func getContactModel() -> ContactModel? {
+        let contactModel = realm?.objects(ContactModel.self).first
+        return contactModel
+    }
+    
+    func getAllContactModel() -> [ContactModel]? {
+        if let contactModels = realm?.objects(ContactModel.self) {
+            return Array(contactModels)
+        }
+        return nil
+    }
+    
 }

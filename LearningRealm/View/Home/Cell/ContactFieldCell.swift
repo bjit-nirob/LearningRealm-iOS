@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+@objc protocol ContactFieldCellDelegate {
+    @objc optional func textFieldDidChanged(textField: PrimaryTextField)
+}
+
 class ContactFieldCell: BaseCell {
     private let containerView: UIView = {
         let view = UIView.createView()
@@ -20,6 +24,8 @@ class ContactFieldCell: BaseCell {
         textField.autocapitalizationType = .words
         return textField
     }()
+    
+    weak var cellDelegate: ContactFieldCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -87,5 +93,7 @@ class ContactFieldCell: BaseCell {
 }
 
 extension ContactFieldCell: PrimaryTextFieldDelegate {
-    
+    func textFieldDidChanged(textField: PrimaryTextField) {
+        cellDelegate?.textFieldDidChanged?(textField: textField)
+    }
 }

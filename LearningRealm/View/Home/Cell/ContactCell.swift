@@ -42,6 +42,8 @@ class ContactCell: BaseCell {
         view.backgroundColor = .lightGray.withAlphaComponent(0.3)
         return view
     }()
+    
+    private var model: ContactModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -105,9 +107,10 @@ class ContactCell: BaseCell {
         }
     }
     
-    func setupCell(indexPath: IndexPath) {
-        nameLbl.text = "Name \(indexPath.row)"
-        mobNumLbl.text = "Mobile \(indexPath.row)"
+    func setupCell(model: ContactModel?, indexPath: IndexPath) {
+        self.model = model
+        nameLbl.text = "\(self.model?.firstName ?? "") \(self.model?.lastName ?? "")"
+        mobNumLbl.text = "Mob: \(self.model?.mobNumber ?? "")"
     }
 
 }

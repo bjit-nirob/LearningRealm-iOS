@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct ContactModel: Codable {
-    let imageUrl: String?
-    let firstName: String?
-    let lastName: String?
-    let mobNumber: String?
+class ContactModel: Object {
+    @Persisted var imageUrl: String
+    @Persisted var firstName: String?
+    @Persisted var lastName: String?
+    @Persisted var mobNumber: String?
 }
