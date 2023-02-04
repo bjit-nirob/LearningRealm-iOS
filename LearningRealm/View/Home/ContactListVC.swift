@@ -86,7 +86,7 @@ extension ContactListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let keys = contactVM.allContactModel.keys
-        let keyArray = Array(keys)
+        let keyArray = Array(keys).sorted(by: <)
         return contactVM.allContactModel[keyArray[section]]?.count ?? 0
     }
     
@@ -95,7 +95,7 @@ extension ContactListVC: UITableViewDataSource {
             fatalError("ContactCell does not created properly")
         }
         let keys = contactVM.allContactModel.keys
-        let keyArray = Array(keys)
+        let keyArray = Array(keys).sorted(by: <)
         let contactModel = contactVM.allContactModel[keyArray[indexPath.section]]?[indexPath.row]
         cell.setupCell(model: contactModel, indexPath: indexPath)
         return cell
@@ -106,6 +106,8 @@ extension ContactListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return contactVM.alphabet[section]
+        let keys = contactVM.allContactModel.keys
+        let keyArray = Array(keys).sorted(by: <)
+        return keyArray[section]
     }
 }

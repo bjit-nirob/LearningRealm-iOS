@@ -20,6 +20,7 @@ final class RealmManager {
     func addContactModel(contactModel: ContactModel) {
         try? realm?.write({
             realm?.add(contactModel)
+            print("Realm path:: \(realm?.configuration.fileURL)")
         })
     }
     
@@ -29,7 +30,7 @@ final class RealmManager {
     }
     
     func getAllContactModel() -> [ContactModel]? {
-        if let contactModels = realm?.objects(ContactModel.self) {
+        if let contactModels = realm?.objects(ContactModel.self).sorted(byKeyPath: "firstName", ascending: true) {
             return Array(contactModels)
         }
         return nil

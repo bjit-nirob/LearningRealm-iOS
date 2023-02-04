@@ -10,7 +10,7 @@ import Foundation
 class ContactViewModel {
     var contactModel: ContactModel?
     let alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
-    var allContactModel = Dictionary<String, Array<ContactModel>>()//[String: [ContactModel]] = [:]
+    var allContactModel: [String: [ContactModel]] = [:]
     
     init() {
         contactModel = ContactModel()
@@ -33,10 +33,17 @@ class ContactViewModel {
             let key = String(contactModel.firstName?.first ?? "Z")
             print("Key:: \(key)")
             if allContactModel[key] != nil {
-                self.allContactModel[key]?.append(contactModel)
+                allContactModel[key]?.append(contactModel)
             } else {
-                self.allContactModel[key] = [contactModel]
+                allContactModel[key] = [contactModel]
             }
         })
+//        let sortedContacts = allContactModel.sorted { $0.key > $1.key }
+//        print("sortedContacts:: \(sortedContacts)")
+//        allContactModel.removeAll()
+//        sortedContacts.forEach { (key, value) in
+//            allContactModel[key] = value
+//        }
+//        print("sortedContacts final:: \(sortedContacts)")
     }
 }
