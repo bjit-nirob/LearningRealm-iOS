@@ -72,11 +72,28 @@ class ContactListVC: BaseViewController {
         let nvc = UINavigationController(rootViewController: vc)
         self.present(nvc, animated: true)
     }
+    
+    private func editContact(contactModel: ContactModel) {
+        let vc = ContactAddVC()
+        contactVM.contactModel = contactModel
+        vc.didComplete = {[weak self] complete in
+            if complete {
+                self?.loadData()
+            }
+        }
+        let nvc = UINavigationController(rootViewController: vc)
+        self.present(nvc, animated: true)
+    }
+    
+    private func deleteContact(contactModel: ContactModel) {
+        contactVM.deleteContact(contactModel: contactModel)
+        loadData()
+    }
 
 }
 
 extension ContactListVC: UITableViewDelegate {
-    
+
 }
 
 extension ContactListVC: UITableViewDataSource {
@@ -85,18 +102,14 @@ extension ContactListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let keys = contactVM.allContactModel.keys
-        let keyArray = Array(keys).sorted(by: <)
-        return contactVM.allContactModel[keyArray[section]]?.count ?? 0
+        return contactVM.allContactModel[contactVM.keys[section]]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as? ContactCell else {
             fatalError("ContactCell does not created properly")
         }
-        let keys = contactVM.allContactModel.keys
-        let keyArray = Array(keys).sorted(by: <)
-        let contactModel = contactVM.allContactModel[keyArray[indexPath.section]]?[indexPath.row]
+        let contactModel = contactVM.allContactModel[contactVM.keys[indexPath.section]]?[indexPath.row]
         cell.setupCell(model: contactModel, indexPath: indexPath)
         return cell
     }
@@ -106,8 +119,33 @@ extension ContactListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let keys = contactVM.allContactModel.keys
-        let keyArray = Array(keys).sorted(by: <)
-        return keyArray[section]
+        return contactVM.keys[section]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title:  "Edit", handler: {[weak self] (contextAction, view, success) in
+            if let self = self, let contactModel = self.contactVM.allContactModel[self.contactVM.keys[indexPath.section]]?[indexPath.row] {
+                self.editContact(contactModel: contactModel)
+            }
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .destructive, title:  "Delete", handler: {[weak self] (contextAction, view, success) in
+            if let self = self, let contactModel = self.contactVM.allContactModel[self.contactVM.keys[indexPath.section]]?[indexPath.row] {
+                self.deleteContact(contactModel: contactModel)
+            }
+//            tableView.deleteRows(at: [indexPath], with: .bottom)
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
     }
 }

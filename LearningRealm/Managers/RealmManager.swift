@@ -14,26 +14,34 @@ final class RealmManager {
     init() {
         do {
             realm = try? Realm()
+            print("Realm path:: \(realm?.configuration.fileURL?.absoluteString ?? "no path")")
         }
     }
     
-    func addContactModel(contactModel: ContactModel) {
+    func addContact(contactModel: ContactModel) {
         try? realm?.write({
             realm?.add(contactModel)
-            print("Realm path:: \(realm?.configuration.fileURL)")
         })
     }
     
-    func getContactModel() -> ContactModel? {
-        let contactModel = realm?.objects(ContactModel.self).first
+    func getContact(primaryKey: String) -> ContactModel? {
+        let contactModel = realm?.object(ofType: ContactModel.self, forPrimaryKey: primaryKey)
         return contactModel
     }
     
-    func getAllContactModel() -> [ContactModel]? {
+    func getAllContact() -> [ContactModel]? {
         if let contactModels = realm?.objects(ContactModel.self).sorted(byKeyPath: "firstName", ascending: true) {
             return Array(contactModels)
         }
         return nil
+    }
+    
+    func deleteContact(contactModel: ContactModel) {
+        try? realm?.write({
+            if let contactM = getContact(primaryKey: contactModel.contactId) {
+                realm?.delete(contactM)
+            }
+        })
     }
     
 }

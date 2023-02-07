@@ -9,7 +9,8 @@ import Foundation
 import RealmSwift
 
 class ContactModel: Object {
-    @Persisted var imageUrl: String
+    @Persisted(primaryKey: true) var contactId: String = UUID().uuidString
+    @Persisted var imageUrl: String?
     @Persisted var firstName: String?
     @Persisted var lastName: String?
     @Persisted var mobNumber: String?

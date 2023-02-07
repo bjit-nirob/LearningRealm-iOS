@@ -15,10 +15,14 @@ class ContactCell: BaseCell {
         return view
     }()
     
-    private let profileImgView: UIImageView = {
-        let imgView = UIView.createImageView(imageName: .logo)
-        imgView.round(radius: 20.s)
-        return imgView
+    private let profileImgLbl: UILabel = {
+        let label = UIView.createLabel()
+        label.font = .InterBold(ofSize: 20.s)
+        label.textAlignment = .center
+        label.textColor = .darkGray
+        label.backgroundColor = .lightGray
+        label.round(radius: 24.s)
+        return label
     }()
     
     private let nameLbl: UILabel = {
@@ -66,9 +70,15 @@ class ContactCell: BaseCell {
         // Configure the view for the selected state
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        profileImgLbl.sizeToFit()
+    }
+    
     private func setupUI() {
         self.contentView.addSubview(containerView)
-        [profileImgView, nameLbl, mobNumLbl, bottomLineView].forEach { view in
+        [profileImgLbl, nameLbl, mobNumLbl, bottomLineView].forEach { view in
             containerView.addSubview(view)
         }
         
@@ -79,28 +89,28 @@ class ContactCell: BaseCell {
             make.trailing.equalToSuperview().offset(-0.s)
         }
         
-        profileImgView.snp.makeConstraints { make in
+        profileImgLbl.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16.s)
             make.top.equalToSuperview().offset(16.s)
-            make.height.equalTo(40.s)
-            make.width.equalTo(40.s)
+            make.height.equalTo(48.s)
+            make.width.equalTo(48.s)
         }
         
         nameLbl.snp.makeConstraints { make in
-            make.leading.equalTo(profileImgView.snp.trailing).offset(16.s)
+            make.leading.equalTo(profileImgLbl.snp.trailing).offset(16.s)
             make.top.equalToSuperview().offset(16.s)
             make.trailing.equalToSuperview().offset(-16.s)
         }
         
         mobNumLbl.snp.makeConstraints { make in
-            make.leading.equalTo(profileImgView.snp.trailing).offset(16.s)
+            make.leading.equalTo(profileImgLbl.snp.trailing).offset(16.s)
             make.top.equalTo(nameLbl.snp.bottom).offset(8.s)
             make.trailing.equalToSuperview().offset(-16.s)
             make.bottom.equalToSuperview().offset(-16.s)
         }
         
         bottomLineView.snp.makeConstraints { make in
-            make.leading.equalTo(profileImgView.snp.trailing).offset(16.s)
+            make.leading.equalTo(profileImgLbl.snp.trailing).offset(16.s)
             make.trailing.equalToSuperview().offset(-0.s)
             make.bottom.equalToSuperview().offset(-0.s)
             make.height.equalTo(1.s)
@@ -111,6 +121,8 @@ class ContactCell: BaseCell {
         self.model = model
         nameLbl.text = "\(self.model?.firstName ?? "") \(self.model?.lastName ?? "")"
         mobNumLbl.text = "Mob: \(self.model?.mobNumber ?? "")"
+        let firstNameL = String(self.model?.firstName?.first ?? "Z")
+        let lastNameL = String(self.model?.lastName?.first ?? "Z")
+        profileImgLbl.text = "\(firstNameL)\(lastNameL)"
     }
-
 }
