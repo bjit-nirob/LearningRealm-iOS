@@ -146,12 +146,12 @@
 		891603BF29715BF900C11AF8 = {
 			isa = PBXGroup;
 			children = (
+				AD1BA20F1F37D36D7BA35EBA /* Frameworks */,
 				891603CA29715BF900C11AF8 /* LearningRealm */,
 				891603E129715BF900C11AF8 /* LearningRealmTests */,
 				891603EB29715BF900C11AF8 /* LearningRealmUITests */,
-				891603C929715BF900C11AF8 /* Products */,
 				F4128647540AE5C44B0EBA54 /* Pods */,
-				AD1BA20F1F37D36D7BA35EBA /* Frameworks */,
+				891603C929715BF900C11AF8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
