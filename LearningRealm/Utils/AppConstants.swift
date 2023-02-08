@@ -54,9 +54,8 @@ struct AppColors {
     static let blueText = UIColor.init(hexString: "#3385FF")
     static let background = UIColor(named: "Background") ?? UIColor.clear
     static let placeholder = UIColor.gray
-    static let primaryColor = UIColor.white
+    static let primaryColor = UIColor(named: "AccentColor") ?? UIColor.clear
     static let accentColor = UIColor(named: "AccentColor") ?? UIColor.clear
-
 }
 
 enum AppTexts: String {
@@ -173,6 +172,8 @@ enum AppImages: String {
     case defaultProfile = "default_profile"
 //    Login
     case logo = "Logo"
+//    others
+    case transparent = "transparent"
 }
 
 struct APIConstants {

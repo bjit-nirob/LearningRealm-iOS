@@ -26,6 +26,7 @@ class ContactFieldCell: BaseCell {
     }()
     
     weak var cellDelegate: ContactFieldCellDelegate?
+    private var model: ContactModel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,21 +73,26 @@ class ContactFieldCell: BaseCell {
         }
     }
     
-    func setupCell(indexPath: IndexPath) {
+    func setupCell(model: ContactModel, indexPath: IndexPath) {
+        self.model = model
         textField.tag = indexPath.row
         
         switch indexPath.row {
         case 0:
             textField.keyboardType = .default
             textField.placeholder = "First Name"
+            textField.text = self.model.firstName
         case 1:
             textField.keyboardType = .default
             textField.placeholder = "Last Name"
+            textField.text = self.model.lastName
         case 2:
             textField.keyboardType = .phonePad
             textField.placeholder = "Mobile Number"
+            textField.text = self.model.mobNumber
         default:
             textField.placeholder = ""
+            textField.text = ""
         }
     }
 

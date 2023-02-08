@@ -16,6 +16,10 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = AppColors.background
+        
+        let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(navigationBarTap))
+        hideKeyboard.numberOfTapsRequired = 1
+        navigationController?.navigationBar.addGestureRecognizer(hideKeyboard)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +32,7 @@ class BaseViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        self.view.endEditing(true)
+        self.endEditing()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -37,6 +41,14 @@ class BaseViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    private func endEditing() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func navigationBarTap() {
+        self.endEditing()
     }
     
     func changeTheme(isDark: Bool) {

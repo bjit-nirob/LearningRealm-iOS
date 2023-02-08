@@ -16,7 +16,7 @@ class ContactAddVC: BaseViewController {
         return tableView
     }()
     
-    var contactVM: ContactViewModel!
+    var viewModel: ContactAddVM!
     var didComplete: ((Bool) -> Void)?
 
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class ContactAddVC: BaseViewController {
     }
     
     private func bindingModel() {
-        contactVM = ContactViewModel()
+        
     }
     
     private func defineLayout() {
@@ -59,7 +59,11 @@ class ContactAddVC: BaseViewController {
     }
     
     private func saveContact() {
-        contactVM.saveContact()
+        if viewModel.shouldEdit {
+            viewModel.updateContact()
+        } else {
+            viewModel.saveContact()
+        }
     }
     
     @objc private func cancelBtnTapped() {
@@ -93,7 +97,7 @@ extension ContactAddVC: UITableViewDataSource {
             fatalError("ContactFieldCell does not created properly")
         }
         cell.cellDelegate = self
-        cell.setupCell(indexPath: indexPath)
+        cell.setupCell(model: viewModel.contactModel, indexPath: indexPath)
         return cell
     }
 }
@@ -102,11 +106,11 @@ extension ContactAddVC: ContactFieldCellDelegate {
     func textFieldDidChanged(textField: PrimaryTextField) {
         switch textField.tag {
         case 0:
-            contactVM.contactModel?.firstName = textField.text
+            viewModel.contactModel?.firstName = textField.text
         case 1:
-            contactVM.contactModel?.lastName = textField.text
+            viewModel.contactModel?.lastName = textField.text
         case 2:
-            contactVM.contactModel?.mobNumber = textField.text
+            viewModel.contactModel?.mobNumber = textField.text
         default:
             print("Nothing is happened")
         }

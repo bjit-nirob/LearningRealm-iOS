@@ -9,6 +9,28 @@ import UIKit
 import SnapKit
 
 class ContactListVC: BaseViewController {
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchB = UISearchBar()
+        searchB.delegate = self
+        searchB.backgroundColor = AppColors.background
+        searchB.barTintColor = AppColors.background
+        searchB.setBackgroundImage(UIImage(named: AppImages.transparent.rawValue), for: .any, barMetrics: .default)
+        searchB.placeholder = "Search"
+        searchB.translatesAutoresizingMaskIntoConstraints = false
+        return searchB
+    }()
+    
+    private let hintLbl: UILabel = {
+        let lbl = UIView.createLabel("No Contacts")
+        lbl.numberOfLines = 0
+        lbl.lineBreakMode = .byWordWrapping
+        lbl.textAlignment = .center
+        lbl.textColor = AppColors.accentColor
+        lbl.font = .InterRegular(ofSize: 24.s)
+        return lbl
+    }()
+    
     private lazy var contactTableView: UITableView = {
         let tableView = UIView.createTableView(delegate: self, dataSource: self)
         tableView.estimatedRowHeight = 44.s
@@ -16,7 +38,7 @@ class ContactListVC: BaseViewController {
         return tableView
     }()
     
-    var contactVM: ContactViewModel!
+    var viewModel: ContactListVM!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +59,7 @@ class ContactListVC: BaseViewController {
 
         navigationItem.rightBarButtonItems = [addBtn]
         
-        [contactTableView].forEach { view in
+        [searchBar, hintLbl, contactTableView].forEach { view in
             self.view.addSubview(view)
         }
         
@@ -45,25 +67,40 @@ class ContactListVC: BaseViewController {
     }
     
     private func bindingModel() {
-        contactVM = ContactViewModel()
+        viewModel = ContactListVM()
     }
     
     private func defineLayout() {
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(self.view.snp.topMargin).offset(0.s)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(40.s)
+            make.width.equalTo(335.s)
+        }
+        
         contactTableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(0.s)
-            make.top.equalToSuperview().offset(0.s)
+            make.top.equalTo(searchBar.snp.bottom).offset(0.s)
             make.trailing.equalToSuperview().offset(0.s)
             make.bottom.equalToSuperview().offset(0.s)
+        }
+        
+        hintLbl.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
     
     private func loadData() {
-        contactVM.loadAllContact()
+        viewModel.loadAllContact()
         contactTableView.reloadData()
+        hintLbl.isHidden = (viewModel.allContactModel.count) != 0
     }
     
     @objc private func addBtnTapped() {
+        let contactAddVM = ContactAddVM()
+        contactAddVM.contactModel = ContactModel()
         let vc = ContactAddVC()
+        vc.viewModel = contactAddVM
         vc.didComplete = {[weak self] complete in
             if complete {
                 self?.loadData()
@@ -74,8 +111,13 @@ class ContactListVC: BaseViewController {
     }
     
     private func editContact(contactModel: ContactModel) {
+        let contactAddVM = ContactAddVM()
+        contactAddVM.shouldEdit = true
+        if let contactM = contactModel.copy() as? ContactModel {
+            contactAddVM.contactModel = contactM
+        }
         let vc = ContactAddVC()
-        contactVM.contactModel = contactModel
+        vc.viewModel = contactAddVM
         vc.didComplete = {[weak self] complete in
             if complete {
                 self?.loadData()
@@ -86,8 +128,14 @@ class ContactListVC: BaseViewController {
     }
     
     private func deleteContact(contactModel: ContactModel) {
-        contactVM.deleteContact(contactModel: contactModel)
+        viewModel.deleteContact(contactModel: contactModel)
         loadData()
+    }
+    
+    private func handleSearch() {
+        searchBar.resignFirstResponder()
+        loadData()
+        contactTableView.setContentOffset(CGPoint.zero, animated: false)
     }
 
 }
@@ -98,28 +146,28 @@ extension ContactListVC: UITableViewDelegate {
 
 extension ContactListVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return contactVM.allContactModel.keys.count
+        return viewModel.allContactModel.keys.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactVM.allContactModel[contactVM.keys[section]]?.count ?? 0
+        return viewModel.allContactModel[viewModel.keys[section]]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as? ContactCell else {
             fatalError("ContactCell does not created properly")
         }
-        let contactModel = contactVM.allContactModel[contactVM.keys[indexPath.section]]?[indexPath.row]
+        let contactModel = viewModel.allContactModel[viewModel.keys[indexPath.section]]?[indexPath.row]
         cell.setupCell(model: contactModel, indexPath: indexPath)
         return cell
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return contactVM.alphabet
+        return viewModel.alphabet
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return contactVM.keys[section]
+        return viewModel.keys[section]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -127,8 +175,8 @@ extension ContactListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title:  "Edit", handler: {[weak self] (contextAction, view, success) in
-            if let self = self, let contactModel = self.contactVM.allContactModel[self.contactVM.keys[indexPath.section]]?[indexPath.row] {
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {[weak self] (_, _, success) in
+            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
                 self.editContact(contactModel: contactModel)
             }
             success(true)
@@ -138,14 +186,30 @@ extension ContactListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .destructive, title:  "Delete", handler: {[weak self] (contextAction, view, success) in
-            if let self = self, let contactModel = self.contactVM.allContactModel[self.contactVM.keys[indexPath.section]]?[indexPath.row] {
+        let editAction = UIContextualAction(style: .destructive, title: "Delete", handler: {[weak self] (_, _, success) in
+            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
                 self.deleteContact(contactModel: contactModel)
             }
-//            tableView.deleteRows(at: [indexPath], with: .bottom)
             success(true)
         })
         
         return UISwipeActionsConfiguration(actions: [editAction])
+    }
+}
+
+extension ContactListVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchText = searchText
+        if searchText.isEmpty {
+            handleSearch()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBarCancelButtonClicked")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        handleSearch()
     }
 }

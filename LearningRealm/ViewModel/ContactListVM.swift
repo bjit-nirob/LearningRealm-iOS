@@ -7,31 +7,25 @@
 
 import Foundation
 
-class ContactViewModel {
-    var contactModel: ContactModel?
+class ContactListVM {
     let alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
     var allContactModel: [String: [ContactModel]] = [:]
-    var keys: [String]
+    var keys: [String] = []
+    var searchText: String = ""
     
     init() {
-        contactModel = ContactModel()
-        keys = []
+        
     }
     
-    func saveContact() {
-        if let contactModel = contactModel {
-            RealmManager.shared.addContact(contactModel: contactModel)
-        }
-    }
-    
-    func loadContact(primaryKey: String) {
-        contactModel = RealmManager.shared.getContact(primaryKey: primaryKey)
+    func getContact(primaryKey: String) -> ContactModel? {
+        let contactModel = RealmManager.shared.getContact(primaryKey: primaryKey)
+        return contactModel
     }
     
     func loadAllContact() {
         allContactModel.removeAll()
         keys.removeAll()
-        let contactModels = RealmManager.shared.getAllContact()
+        let contactModels = searchText.isEmpty ? RealmManager.shared.getAllContact() : RealmManager.shared.getAllContact(where: searchText)
         contactModels?.forEach({ contactModel in
             let key = String(contactModel.firstName?.first ?? "Z")
             print("Key:: \(key)")
