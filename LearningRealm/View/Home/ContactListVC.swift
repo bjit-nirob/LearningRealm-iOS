@@ -209,14 +209,3 @@ extension ContactListVC: UISearchBarDelegate {
         handleSearch()
     }
 }
-
-class ContactListDiffableDataSource: UITableViewDiffableDataSource<String, ContactModel> {
-    var viewModel: ContactListVM!
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.keys[section]
-    }
-    
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return viewModel.alphabet
-    }
-}
