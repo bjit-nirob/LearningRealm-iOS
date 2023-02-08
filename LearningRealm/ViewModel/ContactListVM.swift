@@ -41,17 +41,14 @@ class ContactListVM {
         })
     }
     
-    func deleteContact(contactModel: ContactModel) {
-        allContactModel.forEach { (key, _) in
-            allContactModel[key]?.removeAll {
-                $0.contactId == contactModel.contactId
-            }
-            if allContactModel[key]?.isEmpty == true {
-                keys.removeAll {
-                    $0 == key
-                }
-                allContactModel.removeValue(forKey: key)
-            }
+    func deleteContact(indexPath: IndexPath) {
+        guard let contactModel = allContactModel[keys[indexPath.section]]?[indexPath.row] else {
+            return
+        }
+        allContactModel[keys[indexPath.section]]?.remove(at: indexPath.row)
+        if allContactModel[keys[indexPath.section]]?.isEmpty == true {
+            allContactModel.removeValue(forKey: keys[indexPath.section])
+            keys.remove(at: indexPath.section)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             RealmManager.shared.deleteContact(contactModel: contactModel)

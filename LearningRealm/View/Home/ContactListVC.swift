@@ -161,8 +161,8 @@ class ContactListVC: BaseViewController {
         self.present(nvc, animated: true)
     }
     
-    private func deleteContact(contactModel: ContactModel) {
-        viewModel.deleteContact(contactModel: contactModel)
+    private func deleteContact(indexPath: IndexPath) {
+        viewModel.deleteContact(indexPath: indexPath)
         self.applySnapshot()
         self.handleEmptyData()
     }
@@ -192,8 +192,8 @@ extension ContactListVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .destructive, title: "Delete", handler: {[weak self] (_, _, success) in
-            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
-                self.deleteContact(contactModel: contactModel)
+            if let self = self {
+                self.deleteContact(indexPath: indexPath)
             }
             success(true)
         })
