@@ -11,7 +11,6 @@ import MBProgressHUD
 
 class BaseViewController: UIViewController {
 
-    var navBarHeight: CGFloat!
     // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()

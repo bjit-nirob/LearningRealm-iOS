@@ -8,6 +8,10 @@
 import Foundation
 
 class ContactListVM {
+    enum Section {
+        case main
+    }
+    
     let alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
     var allContactModel: [String: [ContactModel]] = [:]
     var keys: [String] = []

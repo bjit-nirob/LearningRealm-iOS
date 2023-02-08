@@ -141,7 +141,27 @@ class ContactListVC: BaseViewController {
 }
 
 extension ContactListVC: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {[weak self] (_, _, success) in
+            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
+                self.editContact(contactModel: contactModel)
+            }
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .destructive, title: "Delete", handler: {[weak self] (_, _, success) in
+            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
+                self.deleteContact(contactModel: contactModel)
+            }
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
 }
 
 extension ContactListVC: UITableViewDataSource {
@@ -172,28 +192,6 @@ extension ContactListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
-    }
-    
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {[weak self] (_, _, success) in
-            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
-                self.editContact(contactModel: contactModel)
-            }
-            success(true)
-        })
-        
-        return UISwipeActionsConfiguration(actions: [editAction])
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .destructive, title: "Delete", handler: {[weak self] (_, _, success) in
-            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
-                self.deleteContact(contactModel: contactModel)
-            }
-            success(true)
-        })
-        
-        return UISwipeActionsConfiguration(actions: [editAction])
     }
 }
 
