@@ -32,7 +32,6 @@ class ContactListVM {
         let contactModels = searchText.isEmpty ? RealmManager.shared.getAllContact() : RealmManager.shared.getAllContact(where: searchText)
         contactModels?.forEach({ contactModel in
             let key = String(contactModel.firstName?.first ?? "Z")
-            print("Key:: \(key)")
             if allContactModel[key] != nil {
                 allContactModel[key]?.append(contactModel)
             } else {

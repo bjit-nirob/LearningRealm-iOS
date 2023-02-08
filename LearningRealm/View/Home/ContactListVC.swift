@@ -95,10 +95,10 @@ class ContactListVC: BaseViewController {
         }
     }
     
-    private func loadData() {
+    private func loadData(indexPath: IndexPath? = nil) {
         viewModel.loadAllContact()
-        self.applySnapshot()
-        hintLbl.isHidden = (viewModel.allContactModel.count) != 0
+        self.applySnapshot(animatingDifferences: true, indexPath: indexPath)
+        self.handleEmptyData()
     }
     
     // MARK: - DataSource
@@ -115,11 +115,14 @@ class ContactListVC: BaseViewController {
         return dataSource
     }
     
-    func applySnapshot(animatingDifferences: Bool = true) {
+    func applySnapshot(animatingDifferences: Bool = true, indexPath: IndexPath? = nil) {
         var snapshot = Snapshot()
         snapshot.appendSections(viewModel.keys)
         viewModel.allContactModel.forEach { (key: String, value: [ContactModel]) in
             snapshot.appendItems(value, toSection: key)
+        }
+        if let _ = indexPath, let section = indexPath?.section {
+            snapshot.reloadSections([viewModel.keys[section]])
         }
         self.dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
@@ -138,7 +141,10 @@ class ContactListVC: BaseViewController {
         self.present(nvc, animated: true)
     }
     
-    private func editContact(contactModel: ContactModel) {
+    private func editContact(indexPath: IndexPath) {
+        guard let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] else {
+            return
+        }
         let contactAddVM = ContactAddVM()
         contactAddVM.shouldEdit = true
         if let contactM = contactModel.copy() as? ContactModel {
@@ -148,7 +154,7 @@ class ContactListVC: BaseViewController {
         vc.viewModel = contactAddVM
         vc.didComplete = {[weak self] complete in
             if complete {
-                self?.loadData()
+                self?.loadData(indexPath: indexPath)
             }
         }
         let nvc = UINavigationController(rootViewController: vc)
@@ -158,13 +164,16 @@ class ContactListVC: BaseViewController {
     private func deleteContact(contactModel: ContactModel) {
         viewModel.deleteContact(contactModel: contactModel)
         self.applySnapshot()
-        hintLbl.isHidden = (viewModel.allContactModel.count) != 0
+        self.handleEmptyData()
     }
     
     private func handleSearch() {
         searchBar.resignFirstResponder()
         loadData()
-        contactTableView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+    private func handleEmptyData() {
+        hintLbl.isHidden = (viewModel.allContactModel.count) != 0
     }
 
 }
@@ -172,8 +181,8 @@ class ContactListVC: BaseViewController {
 extension ContactListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {[weak self] (_, _, success) in
-            if let self = self, let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row] {
-                self.editContact(contactModel: contactModel)
+            if let self = self {
+                self.editContact(indexPath: indexPath)
             }
             success(true)
         })
