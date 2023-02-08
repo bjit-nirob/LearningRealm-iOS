@@ -74,7 +74,9 @@ class ContactAddVC: BaseViewController {
     @objc private func doneBtnTapped() {
         self.saveContact()
         self.dismiss(animated: true)
-        didComplete?(true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.didComplete?(true)
+        }
     }
 
 }

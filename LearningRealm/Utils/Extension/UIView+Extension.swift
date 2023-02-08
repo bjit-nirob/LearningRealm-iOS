@@ -403,7 +403,7 @@ extension UIView {
         return searchField
     }
     
-    public static func createTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) -> UITableView {
+    public static func createTableView(delegate: UITableViewDelegate?, dataSource: UITableViewDataSource?) -> UITableView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = delegate

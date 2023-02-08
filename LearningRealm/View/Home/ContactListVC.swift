@@ -32,12 +32,17 @@ class ContactListVC: BaseViewController {
     }()
     
     private lazy var contactTableView: UITableView = {
-        let tableView = UIView.createTableView(delegate: self, dataSource: self)
+        let tableView = UIView.createTableView(delegate: self, dataSource: nil)
         tableView.estimatedRowHeight = 44.s
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
+    // MARK: - Diffable Datasource
+    typealias DataSource = ContactListDiffableDataSource
+    typealias Snapshot = NSDiffableDataSourceSnapshot<String, ContactModel>
+    
+    private lazy var dataSource = makeDataSource()
     var viewModel: ContactListVM!
 
     override func viewDidLoad() {
@@ -92,8 +97,31 @@ class ContactListVC: BaseViewController {
     
     private func loadData() {
         viewModel.loadAllContact()
-        contactTableView.reloadData()
+        self.applySnapshot()
         hintLbl.isHidden = (viewModel.allContactModel.count) != 0
+    }
+    
+    // MARK: - DataSource
+    func makeDataSource() -> DataSource {
+        let dataSource = DataSource(tableView: contactTableView, cellProvider: {[weak self] (tableView, indexPath, contactModel) -> UITableViewCell? in
+            guard let self = self, let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as? ContactCell else {
+                fatalError("ContactCell is not initialized properly")
+            }
+            let contactModel = self.viewModel.allContactModel[self.viewModel.keys[indexPath.section]]?[indexPath.row]
+            cell.setupCell(model: contactModel, indexPath: indexPath)
+            return cell
+        })
+        dataSource.viewModel = viewModel
+        return dataSource
+    }
+    
+    func applySnapshot(animatingDifferences: Bool = true) {
+        var snapshot = Snapshot()
+        snapshot.appendSections(viewModel.keys)
+        viewModel.allContactModel.forEach { (key: String, value: [ContactModel]) in
+            snapshot.appendItems(value, toSection: key)
+        }
+        self.dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
     @objc private func addBtnTapped() {
@@ -129,7 +157,8 @@ class ContactListVC: BaseViewController {
     
     private func deleteContact(contactModel: ContactModel) {
         viewModel.deleteContact(contactModel: contactModel)
-        loadData()
+        self.applySnapshot()
+        hintLbl.isHidden = (viewModel.allContactModel.count) != 0
     }
     
     private func handleSearch() {
@@ -164,37 +193,6 @@ extension ContactListVC: UITableViewDelegate {
     }
 }
 
-extension ContactListVC: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.allContactModel.keys.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.allContactModel[viewModel.keys[section]]?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as? ContactCell else {
-            fatalError("ContactCell does not created properly")
-        }
-        let contactModel = viewModel.allContactModel[viewModel.keys[indexPath.section]]?[indexPath.row]
-        cell.setupCell(model: contactModel, indexPath: indexPath)
-        return cell
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return viewModel.alphabet
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.keys[section]
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-}
-
 extension ContactListVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
@@ -209,5 +207,16 @@ extension ContactListVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         handleSearch()
+    }
+}
+
+class ContactListDiffableDataSource: UITableViewDiffableDataSource<String, ContactModel> {
+    var viewModel: ContactListVM!
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.keys[section]
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return viewModel.alphabet
     }
 }
