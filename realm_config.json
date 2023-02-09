@@ -1,0 +1,9 @@
+{
+    "app_id": "testapplication-2-eigtv",
+    "config_version": 20210101,
+    "name": "TestApplication-2",
+    "location": "IN-MB",
+    "provider_region": "aws-ap-south-1",
+    "deployment_model": "LOCAL",
+    "environment": "development"
+}
