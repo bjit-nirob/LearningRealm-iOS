@@ -61,8 +61,9 @@ class ContactListVC: BaseViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Contacts"
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtnTapped))
+        let syncBtn = UIBarButtonItem(image: UIImage(named: "sync"), style: .done, target: self, action: #selector(syncBtnTapped))
 
-        navigationItem.rightBarButtonItems = [addBtn]
+        navigationItem.rightBarButtonItems = [addBtn, syncBtn]
         
         [searchBar, hintLbl, contactTableView].forEach { view in
             self.view.addSubview(view)
@@ -121,7 +122,7 @@ class ContactListVC: BaseViewController {
         viewModel.allContactModel.forEach { (key: String, value: [ContactModel]) in
             snapshot.appendItems(value, toSection: key)
         }
-        if let _ = indexPath, let section = indexPath?.section {
+        if indexPath != nil, let section = indexPath?.section {
             snapshot.reloadSections([viewModel.keys[section]])
         }
         self.dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
@@ -139,6 +140,11 @@ class ContactListVC: BaseViewController {
         }
         let nvc = UINavigationController(rootViewController: vc)
         self.present(nvc, animated: true)
+    }
+    
+    @objc private func syncBtnTapped() {
+        print("syncBtnTapped")
+        RealmManager.shared.sync()
     }
     
     private func editContact(indexPath: IndexPath) {

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ContactModel: Object, NSCopying {
-    @Persisted(primaryKey: true) var contactId: String = UUID().uuidString
+    @Persisted(primaryKey: true) var _id: String = UUID().uuidString
     @Persisted var imageUrl: String?
     @Persisted var firstName: String?
     @Persisted var lastName: String?
@@ -17,7 +17,7 @@ class ContactModel: Object, NSCopying {
     
     func copy(with zone: NSZone? = nil) -> Any {
         let contactModel = ContactModel()
-        contactModel.contactId = self.contactId
+        contactModel._id = self._id
         contactModel.imageUrl = self.imageUrl
         contactModel.firstName = self.firstName
         contactModel.lastName = self.lastName
