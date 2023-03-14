@@ -23,6 +23,7 @@ final class RealmManager {
     }
     
     func addContact(contactModel: ContactModel) {
+        print("LR test:: contactId: \(contactModel._id)")
         try? realm?.write({
             realm?.add(contactModel)
         })
@@ -61,7 +62,8 @@ final class RealmManager {
         })
     }
     
-    @MainActor func sync() {
+    @MainActor
+    func sync() {
         if let currentUser = app?.currentUser {
             Task.init(operation: {
                 await self.openSyncedRealm(user: currentUser)
@@ -99,10 +101,11 @@ final class RealmManager {
             try await subscriptions.update {
                 subscriptions.append(
                     QuerySubscription<ContactModel> {
-                        print("userId: \(user.id) contactId: \($0._id)")
-                        return ($0._id == user.id)
+                        print("LR test:: contactId sync: \($0.firstName.persistableValue)")
+                        return $0.firstName != nil
                     })
             }
+            self.realm = realm
 //            useRealm(realm: realm, user: user)
         } catch {
             print("Error opening realm: \(error.localizedDescription)")

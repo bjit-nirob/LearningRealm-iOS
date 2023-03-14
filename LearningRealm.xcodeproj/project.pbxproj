@@ -17,6 +17,9 @@
 		891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */; };
 		891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */; };
 		891603FF29716E3C00C11AF8 /* ContactListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603FE29716E3C00C11AF8 /* ContactListVM.swift */; };
+		891A6C6D29C0862F00A1ED15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 891A6C6F29C0862F00A1ED15 /* Localizable.strings */; };
+		893D3A3829AC5C2F009CCF0C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */; };
+		893D3A3A29AC5DAA009CCF0C /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */; };
 		893E1BF0298A6E4400A8DC62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */; };
 		893E1BF2298A70A500A8DC62 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */; };
 		893E1BF4298A711600A8DC62 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF3298A711600A8DC62 /* UITextField+Extension.swift */; };
@@ -81,6 +84,10 @@
 		891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITests.swift; sourceTree = "<group>"; };
 		891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		891603FE29716E3C00C11AF8 /* ContactListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVM.swift; sourceTree = "<group>"; };
+		891A6C6E29C0862F00A1ED15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		891A6C7129C086E600A1ED15 /* bn-BD */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-BD"; path = "bn-BD.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		893E1BF3298A711600A8DC62 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -240,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				896E34E5298B5A9A00869892 /* Fonts */,
+				891A6C6F29C0862F00A1ED15 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				898AF427297175A00068E4CA /* RealmManager.swift */,
+				893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */,
+				893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -449,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"bn-BD",
 			);
 			mainGroup = 891603BF29715BF900C11AF8;
 			productRefGroup = 891603C929715BF900C11AF8 /* Products */;
@@ -471,6 +482,7 @@
 				896E34F1298B5A9A00869892 /* Inter-Light.ttf in Resources */,
 				896E34F0298B5A9A00869892 /* Inter-Medium.ttf in Resources */,
 				896E34F5298B5A9A00869892 /* Inter-SemiBold.ttf in Resources */,
+				891A6C6D29C0862F00A1ED15 /* Localizable.strings in Resources */,
 				896E34F4298B5A9A00869892 /* Inter-ExtraBold.ttf in Resources */,
 				891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */,
 				891603D529715BF900C11AF8 /* Assets.xcassets in Resources */,
@@ -624,6 +636,7 @@
 				891603FF29716E3C00C11AF8 /* ContactListVM.swift in Sources */,
 				898AF42E297177EC0068E4CA /* String+Extension.swift in Sources */,
 				891603D029715BF900C11AF8 /* ContactListVC.swift in Sources */,
+				893D3A3829AC5C2F009CCF0C /* KeychainManager.swift in Sources */,
 				896E3501298BAD5700869892 /* BaseCell.swift in Sources */,
 				896E34F8298B6E9600869892 /* Others+Extension.swift in Sources */,
 				893E1BF0298A6E4400A8DC62 /* BaseViewController.swift in Sources */,
@@ -641,6 +654,7 @@
 				89524FEB2977F7BC0056637A /* SplashVC.swift in Sources */,
 				896E3503298BB40F00869892 /* ContactAddVC.swift in Sources */,
 				893E1BF2298A70A500A8DC62 /* PrimaryTextField.swift in Sources */,
+				893D3A3A29AC5DAA009CCF0C /* UserDefaultManager.swift in Sources */,
 				89524FF0297801380056637A /* AppConstants.swift in Sources */,
 				896E34FF298BA9A800869892 /* ContactModel.swift in Sources */,
 				893E1BF4298A711600A8DC62 /* UITextField+Extension.swift in Sources */,
@@ -688,6 +702,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		891A6C6F29C0862F00A1ED15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891A6C6E29C0862F00A1ED15 /* en */,
+				891A6C7129C086E600A1ED15 /* bn-BD */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -695,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -755,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

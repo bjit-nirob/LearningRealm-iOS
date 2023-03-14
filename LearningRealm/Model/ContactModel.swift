@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ContactModel: Object, NSCopying {
-    @Persisted(primaryKey: true) var _id: String = UUID().uuidString
+    @Persisted(primaryKey: true) var _id: ObjectId = ObjectId.generate()
     @Persisted var imageUrl: String?
     @Persisted var firstName: String?
     @Persisted var lastName: String?

@@ -59,11 +59,11 @@ class ContactListVC: BaseViewController {
         addBG(color: AppColors.background)
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Contacts"
+        title = AppTexts.translate_id_0001.rawValue.tr
         let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtnTapped))
-        let syncBtn = UIBarButtonItem(image: UIImage(named: "sync"), style: .done, target: self, action: #selector(syncBtnTapped))
+//        let syncBtn = UIBarButtonItem(image: UIImage(named: "sync"), style: .done, target: self, action: #selector(syncBtnTapped))
 
-        navigationItem.rightBarButtonItems = [addBtn, syncBtn]
+        navigationItem.rightBarButtonItems = [addBtn]
         
         [searchBar, hintLbl, contactTableView].forEach { view in
             self.view.addSubview(view)
