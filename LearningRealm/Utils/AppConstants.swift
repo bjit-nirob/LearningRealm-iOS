@@ -36,6 +36,16 @@ enum AppTexts: String {
     case translate_id_0008
     case translate_id_0009
     case translate_id_0010
+    case translate_id_0011
+    case translate_id_0012
+    case translate_id_0013
+    case translate_id_0014
+    case translate_id_0015
+    case translate_id_0016
+    case translate_id_0017
+    case translate_id_0018
+    case translate_id_0019
+    case translate_id_0020
 }
 
 enum AppImages: String {

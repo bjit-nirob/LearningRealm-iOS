@@ -16,13 +16,13 @@ class ContactListVC: BaseViewController {
         searchB.backgroundColor = AppColors.background
         searchB.barTintColor = AppColors.background
         searchB.setBackgroundImage(UIImage(named: AppImages.transparent.rawValue), for: .any, barMetrics: .default)
-        searchB.placeholder = "Search"
+        searchB.placeholder = AppTexts.translate_id_0002.rawValue.tr
         searchB.translatesAutoresizingMaskIntoConstraints = false
         return searchB
     }()
     
     private let hintLbl: UILabel = {
-        let lbl = UIView.createLabel("No Contacts")
+        let lbl = UIView.createLabel(text: .translate_id_0003)
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byWordWrapping
         lbl.textAlignment = .center
@@ -186,7 +186,7 @@ class ContactListVC: BaseViewController {
 
 extension ContactListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: {[weak self] (_, _, success) in
+        let editAction = UIContextualAction(style: .normal, title: AppTexts.translate_id_0004.rawValue.tr, handler: {[weak self] (_, _, success) in
             if let self = self {
                 self.editContact(indexPath: indexPath)
             }
@@ -197,7 +197,7 @@ extension ContactListVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .destructive, title: "Delete", handler: {[weak self] (_, _, success) in
+        let editAction = UIContextualAction(style: .destructive, title: AppTexts.translate_id_0005.rawValue.tr, handler: {[weak self] (_, _, success) in
             if let self = self {
                 self.deleteContact(indexPath: indexPath)
             }

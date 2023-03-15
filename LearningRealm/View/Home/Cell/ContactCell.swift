@@ -120,7 +120,7 @@ class ContactCell: BaseCell {
     func setupCell(model: ContactModel?, indexPath: IndexPath) {
         self.model = model
         nameLbl.text = "\(self.model?.firstName ?? "") \(self.model?.lastName ?? "")"
-        mobNumLbl.text = "Mob: \(self.model?.mobNumber ?? "")"
+        mobNumLbl.text = AppTexts.translate_id_0010.rawValue.tr + " \(self.model?.mobNumber ?? "")"
         let firstNameL = String(self.model?.firstName?.first ?? "Z")
         let lastNameL = String(self.model?.lastName?.first ?? "Z")
         profileImgLbl.text = "\(firstNameL)\(lastNameL)"

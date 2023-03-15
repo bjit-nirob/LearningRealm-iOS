@@ -10,7 +10,7 @@ import SnapKit
 
 class SplashVC: BaseViewController {
     private let splashLbl: UILabel = {
-        let label = UIView.createLabel("Welcome to my HEAVEN!")
+        let label = UIView.createLabel(text: .translate_id_0011)
         label.font = .InterMedium(ofSize: 16.sp)
         label.textColor = AppColors.accentColor
         return label

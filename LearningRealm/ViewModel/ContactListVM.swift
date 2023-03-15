@@ -11,8 +11,10 @@ class ContactListVM {
     enum Section {
         case main
     }
-    
-    let alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
+    var alphabet: [String] = (65...90).map({String(UnicodeScalar($0))})
+    /*{
+        return AppManager.shared.getLanguageCode() == .bn ? ["অ", "আ", "ই", "ঈ", "উ", "ঊ", "ঋ", "এ", "ঐ", "ও", "ঔ", "ক", "খ", "গ", "ঘ", "ঙ", "চ", "ছ", "জ", "ঝ", "ঞ", "ট", "ঠ", "ড", "ঢ", "ণ", "ত", "থ", "দ", "ধ", "ন", "প", "ফ", "ব", "ভ", "ম", "য", "র", "ল", "শ", "ষ", "স", "হ", "ড়", "ঢ়", "য়"] : (65...90).map({String(UnicodeScalar($0))})
+    }()*/
     var allContactModel: [String: [ContactModel]] = [:]
     var keys: [String] = []
     var searchText: String = ""

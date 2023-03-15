@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum Language: String {
+    case en
+    case bn
+}
+
 final class AppManager {
     static let shared = AppManager()
     
@@ -27,6 +32,10 @@ final class AppManager {
     
     init() {
         
+    }
+    
+    func getLanguageCode() -> Language {
+        return .bn
     }
     
 }

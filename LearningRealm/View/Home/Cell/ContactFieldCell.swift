@@ -80,15 +80,15 @@ class ContactFieldCell: BaseCell {
         switch indexPath.row {
         case 0:
             textField.keyboardType = .default
-            textField.placeholder = "First Name"
+            textField.placeholder = AppTexts.translate_id_0007.rawValue.tr
             textField.text = self.model.firstName
         case 1:
             textField.keyboardType = .default
-            textField.placeholder = "Last Name"
+            textField.placeholder = AppTexts.translate_id_0008.rawValue.tr
             textField.text = self.model.lastName
         case 2:
             textField.keyboardType = .phonePad
-            textField.placeholder = "Mobile Number"
+            textField.placeholder = AppTexts.translate_id_0009.rawValue.tr
             textField.text = self.model.mobNumber
         default:
             textField.placeholder = ""

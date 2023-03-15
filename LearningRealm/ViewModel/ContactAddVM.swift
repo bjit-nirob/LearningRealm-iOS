@@ -27,4 +27,11 @@ class ContactAddVM {
             RealmManager.shared.updateContact(contactModel: contactModel)
         }
     }
+    
+    func shouldSave() -> Bool {
+        if let contactModel = contactModel, contactModel.firstName?.isEmpty == false, contactModel.lastName?.isEmpty == false, contactModel.mobNumber?.isEmpty == false {
+            return true
+        }
+        return false
+    }
 }

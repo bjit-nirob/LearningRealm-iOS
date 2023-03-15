@@ -67,5 +67,14 @@ class BaseViewController: UIViewController {
     func hideHUD() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
+    
+    func showAlert(title: String, message: String, actionHandler: (()->Void)?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: AppTexts.translate_id_0016.rawValue.tr, style: .default) { [weak self] action in
+            actionHandler?()
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
 
 }

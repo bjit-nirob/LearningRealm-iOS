@@ -31,9 +31,9 @@ class ContactAddVC: BaseViewController {
     private func setupUI() {
         addBG(color: AppColors.background)
         
-        title = "New Contact"
-        let cancelBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBtnTapped))
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnTapped))
+        title = AppTexts.translate_id_0006.rawValue.tr
+        let cancelBtn = UIBarButtonItem(title: AppTexts.translate_id_0012.rawValue.tr, style: .plain, target: self, action: #selector(cancelBtnTapped))
+        let doneBtn = UIBarButtonItem(title: AppTexts.translate_id_0013.rawValue.tr, style: .plain, target: self, action: #selector(doneBtnTapped))
 
         navigationItem.leftBarButtonItem = cancelBtn
         navigationItem.rightBarButtonItem = doneBtn
@@ -72,10 +72,16 @@ class ContactAddVC: BaseViewController {
     }
     
     @objc private func doneBtnTapped() {
-        self.saveContact()
-        self.dismiss(animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.didComplete?(true)
+        if viewModel.shouldSave() {
+            self.saveContact()
+            self.dismiss(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.didComplete?(true)
+            }
+        } else {
+            showAlert(title: AppTexts.translate_id_0014.rawValue.tr, message: "\n" + AppTexts.translate_id_0015.rawValue.tr) { [weak self] in
+                
+            }
         }
     }
 
