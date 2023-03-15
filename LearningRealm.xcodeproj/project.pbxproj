@@ -10,13 +10,43 @@
 		33343E27064FE37F4E7765C8 /* Pods_LearningRealm_LearningRealmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FF29E57183DBF85B3CE9AF /* Pods_LearningRealm_LearningRealmUITests.framework */; };
 		82F3A7A11CE8ECAB704AED24 /* Pods_LearningRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E6D824D2B2CC712EB6F98 /* Pods_LearningRealm.framework */; };
 		891603CC29715BF900C11AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603CB29715BF900C11AF8 /* AppDelegate.swift */; };
-		891603D029715BF900C11AF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603CF29715BF900C11AF8 /* ViewController.swift */; };
-		891603D329715BF900C11AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891603D129715BF900C11AF8 /* Main.storyboard */; };
+		891603D029715BF900C11AF8 /* ContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603CF29715BF900C11AF8 /* ContactListVC.swift */; };
 		891603D529715BF900C11AF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891603D429715BF900C11AF8 /* Assets.xcassets */; };
 		891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891603D629715BF900C11AF8 /* LaunchScreen.storyboard */; };
 		891603E329715BF900C11AF8 /* LearningRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603E229715BF900C11AF8 /* LearningRealmTests.swift */; };
 		891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */; };
 		891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */; };
+		891603FF29716E3C00C11AF8 /* ContactListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603FE29716E3C00C11AF8 /* ContactListVM.swift */; };
+		891A6C6D29C0862F00A1ED15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 891A6C6F29C0862F00A1ED15 /* Localizable.strings */; };
+		893D3A3829AC5C2F009CCF0C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */; };
+		893D3A3A29AC5DAA009CCF0C /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */; };
+		893E1BF0298A6E4400A8DC62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */; };
+		893E1BF2298A70A500A8DC62 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */; };
+		893E1BF4298A711600A8DC62 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF3298A711600A8DC62 /* UITextField+Extension.swift */; };
+		893E1BF6298A71EE00A8DC62 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893E1BF5298A71EE00A8DC62 /* UIView+Extension.swift */; };
+		89524FEB2977F7BC0056637A /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FEA2977F7BC0056637A /* SplashVC.swift */; };
+		89524FF0297801380056637A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FEE297801380056637A /* AppConstants.swift */; };
+		89524FF1297801380056637A /* SizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FEF297801380056637A /* SizeConfig.swift */; };
+		89524FF52978023C0056637A /* Primitive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF22978023C0056637A /* Primitive+Extension.swift */; };
+		89524FF62978023C0056637A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF32978023C0056637A /* UIColor+Extension.swift */; };
+		89524FF72978023C0056637A /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89524FF42978023C0056637A /* UIFont+Extension.swift */; };
+		896E34F0298B5A9A00869892 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34E8298B5A9A00869892 /* Inter-Medium.ttf */; };
+		896E34F1298B5A9A00869892 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34E9298B5A9A00869892 /* Inter-Light.ttf */; };
+		896E34F2298B5A9A00869892 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EA298B5A9A00869892 /* Inter-Bold.ttf */; };
+		896E34F3298B5A9A00869892 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EB298B5A9A00869892 /* Inter-Regular.ttf */; };
+		896E34F4298B5A9A00869892 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */; };
+		896E34F5298B5A9A00869892 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */; };
+		896E34F8298B6E9600869892 /* Others+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E34F7298B6E9600869892 /* Others+Extension.swift */; };
+		896E34FD298B8FC000869892 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E34FC298B8FC000869892 /* ContactCell.swift */; };
+		896E34FF298BA9A800869892 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E34FE298BA9A800869892 /* ContactModel.swift */; };
+		896E3501298BAD5700869892 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E3500298BAD5700869892 /* BaseCell.swift */; };
+		896E3503298BB40F00869892 /* ContactAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E3502298BB40F00869892 /* ContactAddVC.swift */; };
+		896E3505298BB9CD00869892 /* ContactFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E3504298BB9CD00869892 /* ContactFieldCell.swift */; };
+		898AF428297175A00068E4CA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF427297175A00068E4CA /* RealmManager.swift */; };
+		898AF42B297177000068E4CA /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF42A297177000068E4CA /* AppManager.swift */; };
+		898AF42E297177EC0068E4CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898AF42D297177EC0068E4CA /* String+Extension.swift */; };
+		89E8BF5429933E4D00951FAC /* ContactAddVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E8BF5329933E4D00951FAC /* ContactAddVM.swift */; };
+		89E8BF562993B3C400951FAC /* ContactListDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E8BF552993B3C400951FAC /* ContactListDiffableDataSource.swift */; };
 		E16F90E33A9888C609DA8581 /* Pods_LearningRealmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D380DE04EC9CE80AB54D281 /* Pods_LearningRealmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +74,7 @@
 		7B7E6D824D2B2CC712EB6F98 /* Pods_LearningRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891603C829715BF900C11AF8 /* LearningRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891603CB29715BF900C11AF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		891603CF29715BF900C11AF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		891603D229715BF900C11AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		891603CF29715BF900C11AF8 /* ContactListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVC.swift; sourceTree = "<group>"; };
 		891603D429715BF900C11AF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		891603D729715BF900C11AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		891603D929715BF900C11AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +83,38 @@
 		891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningRealmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITests.swift; sourceTree = "<group>"; };
 		891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		891603FE29716E3C00C11AF8 /* ContactListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVM.swift; sourceTree = "<group>"; };
+		891A6C6E29C0862F00A1ED15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
+		893E1BF3298A711600A8DC62 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		893E1BF5298A71EE00A8DC62 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		89524FEA2977F7BC0056637A /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		89524FEE297801380056637A /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		89524FEF297801380056637A /* SizeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeConfig.swift; sourceTree = "<group>"; };
+		89524FF22978023C0056637A /* Primitive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitive+Extension.swift"; sourceTree = "<group>"; };
+		89524FF32978023C0056637A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		89524FF42978023C0056637A /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		896E34E8298B5A9A00869892 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		896E34E9298B5A9A00869892 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		896E34EA298B5A9A00869892 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		896E34EB298B5A9A00869892 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		896E34F7298B6E9600869892 /* Others+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Others+Extension.swift"; sourceTree = "<group>"; };
+		896E34FC298B8FC000869892 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		896E34FE298BA9A800869892 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		896E3500298BAD5700869892 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		896E3502298BB40F00869892 /* ContactAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddVC.swift; sourceTree = "<group>"; };
+		896E3504298BB9CD00869892 /* ContactFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactFieldCell.swift; sourceTree = "<group>"; };
+		898AF427297175A00068E4CA /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		898AF42A297177000068E4CA /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		898AF42D297177EC0068E4CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		89E8BF5329933E4D00951FAC /* ContactAddVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddVM.swift; sourceTree = "<group>"; };
+		89E8BF552993B3C400951FAC /* ContactListDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDiffableDataSource.swift; sourceTree = "<group>"; };
+		89F929E829C1860F003E67B1 /* bn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bn; path = bn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D380DE04EC9CE80AB54D281 /* Pods_LearningRealmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningRealmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		913728AD61AFBA30D4B695D7 /* Pods-LearningRealm-LearningRealmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm-LearningRealmUITests.release.xcconfig"; path = "Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B12ABAA5F7A41D050063E62A /* Pods-LearningRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningRealm.debug.xcconfig"; path = "Target Support Files/Pods-LearningRealm/Pods-LearningRealm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,12 +153,12 @@
 		891603BF29715BF900C11AF8 = {
 			isa = PBXGroup;
 			children = (
+				AD1BA20F1F37D36D7BA35EBA /* Frameworks */,
 				891603CA29715BF900C11AF8 /* LearningRealm */,
 				891603E129715BF900C11AF8 /* LearningRealmTests */,
 				891603EB29715BF900C11AF8 /* LearningRealmUITests */,
-				891603C929715BF900C11AF8 /* Products */,
 				F4128647540AE5C44B0EBA54 /* Pods */,
-				AD1BA20F1F37D36D7BA35EBA /* Frameworks */,
+				891603C929715BF900C11AF8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,12 +175,16 @@
 		891603CA29715BF900C11AF8 /* LearningRealm */ = {
 			isa = PBXGroup;
 			children = (
-				891603CB29715BF900C11AF8 /* AppDelegate.swift */,
-				891603CF29715BF900C11AF8 /* ViewController.swift */,
-				891603D129715BF900C11AF8 /* Main.storyboard */,
-				891603D429715BF900C11AF8 /* Assets.xcassets */,
-				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
 				891603D929715BF900C11AF8 /* Info.plist */,
+				891603D429715BF900C11AF8 /* Assets.xcassets */,
+				898AF429297176E60068E4CA /* App */,
+				891603D629715BF900C11AF8 /* LaunchScreen.storyboard */,
+				898AF425297175880068E4CA /* Managers */,
+				891603FB297162AD00C11AF8 /* Model */,
+				896E34E4298B5A8400869892 /* Resources */,
+				898AF4262971758E0068E4CA /* Utils */,
+				891603FC297162B400C11AF8 /* View */,
+				891603FD297162BB00C11AF8 /* ViewModel */,
 			);
 			path = LearningRealm;
 			sourceTree = "<group>";
@@ -139,6 +204,144 @@
 				891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */,
 			);
 			path = LearningRealmUITests;
+			sourceTree = "<group>";
+		};
+		891603FB297162AD00C11AF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				896E34FE298BA9A800869892 /* ContactModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		891603FC297162B400C11AF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				896E34FA298B8F7B00869892 /* Home */,
+				896E34F9298B8F7400869892 /* Splash */,
+				893E1BEE298A6E2200A8DC62 /* CommonView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		891603FD297162BB00C11AF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				891603FE29716E3C00C11AF8 /* ContactListVM.swift */,
+				89E8BF5329933E4D00951FAC /* ContactAddVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		893E1BEE298A6E2200A8DC62 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				893E1BF1298A70A500A8DC62 /* PrimaryTextField.swift */,
+				893E1BEF298A6E4400A8DC62 /* BaseViewController.swift */,
+				896E3500298BAD5700869892 /* BaseCell.swift */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		896E34E4298B5A8400869892 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E5298B5A9A00869892 /* Fonts */,
+				891A6C6F29C0862F00A1ED15 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		896E34E5298B5A9A00869892 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E7298B5A9A00869892 /* Inter-Font */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		896E34E7298B5A9A00869892 /* Inter-Font */ = {
+			isa = PBXGroup;
+			children = (
+				896E34E8298B5A9A00869892 /* Inter-Medium.ttf */,
+				896E34E9298B5A9A00869892 /* Inter-Light.ttf */,
+				896E34EA298B5A9A00869892 /* Inter-Bold.ttf */,
+				896E34EB298B5A9A00869892 /* Inter-Regular.ttf */,
+				896E34EC298B5A9A00869892 /* Inter-ExtraBold.ttf */,
+				896E34ED298B5A9A00869892 /* Inter-SemiBold.ttf */,
+			);
+			path = "Inter-Font";
+			sourceTree = "<group>";
+		};
+		896E34F9298B8F7400869892 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				89524FEA2977F7BC0056637A /* SplashVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		896E34FA298B8F7B00869892 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				896E34FB298B8F9700869892 /* Cell */,
+				891603CF29715BF900C11AF8 /* ContactListVC.swift */,
+				896E3502298BB40F00869892 /* ContactAddVC.swift */,
+				89E8BF552993B3C400951FAC /* ContactListDiffableDataSource.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		896E34FB298B8F9700869892 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				896E3504298BB9CD00869892 /* ContactFieldCell.swift */,
+				896E34FC298B8FC000869892 /* ContactCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		898AF425297175880068E4CA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				898AF427297175A00068E4CA /* RealmManager.swift */,
+				893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */,
+				893D3A3929AC5DAA009CCF0C /* UserDefaultManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		898AF4262971758E0068E4CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				89524FEE297801380056637A /* AppConstants.swift */,
+				89524FEF297801380056637A /* SizeConfig.swift */,
+				898AF42C297177D30068E4CA /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		898AF429297176E60068E4CA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				891603CB29715BF900C11AF8 /* AppDelegate.swift */,
+				898AF42A297177000068E4CA /* AppManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		898AF42C297177D30068E4CA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				893E1BF5298A71EE00A8DC62 /* UIView+Extension.swift */,
+				893E1BF3298A711600A8DC62 /* UITextField+Extension.swift */,
+				89524FF22978023C0056637A /* Primitive+Extension.swift */,
+				89524FF32978023C0056637A /* UIColor+Extension.swift */,
+				89524FF42978023C0056637A /* UIFont+Extension.swift */,
+				898AF42D297177EC0068E4CA /* String+Extension.swift */,
+				896E34F7298B6E9600869892 /* Others+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		AD1BA20F1F37D36D7BA35EBA /* Frameworks */ = {
@@ -161,7 +364,6 @@
 				D5FD494FAA48B35D93993AC0 /* Pods-LearningRealmTests.debug.xcconfig */,
 				151218D1E0C7DFDE711DCA24 /* Pods-LearningRealmTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,6 +379,7 @@
 				891603C529715BF900C11AF8 /* Frameworks */,
 				891603C629715BF900C11AF8 /* Resources */,
 				4089575E2360111FA7568C27 /* [CP] Embed Pods Frameworks */,
+				89524FE92977EA7A0056637A /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -256,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				bn,
 			);
 			mainGroup = 891603BF29715BF900C11AF8;
 			productRefGroup = 891603C929715BF900C11AF8 /* Products */;
@@ -274,9 +478,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896E34F2298B5A9A00869892 /* Inter-Bold.ttf in Resources */,
+				896E34F1298B5A9A00869892 /* Inter-Light.ttf in Resources */,
+				896E34F0298B5A9A00869892 /* Inter-Medium.ttf in Resources */,
+				896E34F5298B5A9A00869892 /* Inter-SemiBold.ttf in Resources */,
+				891A6C6D29C0862F00A1ED15 /* Localizable.strings in Resources */,
+				896E34F4298B5A9A00869892 /* Inter-ExtraBold.ttf in Resources */,
 				891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */,
 				891603D529715BF900C11AF8 /* Assets.xcassets in Resources */,
-				891603D329715BF900C11AF8 /* Main.storyboard in Resources */,
+				896E34F3298B5A9A00869892 /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +585,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearningRealm-LearningRealmUITests/Pods-LearningRealm-LearningRealmUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		89524FE92977EA7A0056637A /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		DD514AE7F0D8280888C22E5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,8 +632,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891603D029715BF900C11AF8 /* ViewController.swift in Sources */,
+				89524FF72978023C0056637A /* UIFont+Extension.swift in Sources */,
+				891603FF29716E3C00C11AF8 /* ContactListVM.swift in Sources */,
+				898AF42E297177EC0068E4CA /* String+Extension.swift in Sources */,
+				891603D029715BF900C11AF8 /* ContactListVC.swift in Sources */,
+				893D3A3829AC5C2F009CCF0C /* KeychainManager.swift in Sources */,
+				896E3501298BAD5700869892 /* BaseCell.swift in Sources */,
+				896E34F8298B6E9600869892 /* Others+Extension.swift in Sources */,
+				893E1BF0298A6E4400A8DC62 /* BaseViewController.swift in Sources */,
+				896E3505298BB9CD00869892 /* ContactFieldCell.swift in Sources */,
+				898AF428297175A00068E4CA /* RealmManager.swift in Sources */,
+				89524FF52978023C0056637A /* Primitive+Extension.swift in Sources */,
+				89524FF1297801380056637A /* SizeConfig.swift in Sources */,
+				896E34FD298B8FC000869892 /* ContactCell.swift in Sources */,
+				898AF42B297177000068E4CA /* AppManager.swift in Sources */,
 				891603CC29715BF900C11AF8 /* AppDelegate.swift in Sources */,
+				89E8BF562993B3C400951FAC /* ContactListDiffableDataSource.swift in Sources */,
+				893E1BF6298A71EE00A8DC62 /* UIView+Extension.swift in Sources */,
+				89E8BF5429933E4D00951FAC /* ContactAddVM.swift in Sources */,
+				89524FF62978023C0056637A /* UIColor+Extension.swift in Sources */,
+				89524FEB2977F7BC0056637A /* SplashVC.swift in Sources */,
+				896E3503298BB40F00869892 /* ContactAddVC.swift in Sources */,
+				893E1BF2298A70A500A8DC62 /* PrimaryTextField.swift in Sources */,
+				893D3A3A29AC5DAA009CCF0C /* UserDefaultManager.swift in Sources */,
+				89524FF0297801380056637A /* AppConstants.swift in Sources */,
+				896E34FF298BA9A800869892 /* ContactModel.swift in Sources */,
+				893E1BF4298A711600A8DC62 /* UITextField+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,20 +694,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		891603D129715BF900C11AF8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				891603D229715BF900C11AF8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		891603D629715BF900C11AF8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				891603D729715BF900C11AF8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		891A6C6F29C0862F00A1ED15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				891A6C6E29C0862F00A1ED15 /* en */,
+				89F929E829C1860F003E67B1 /* bn */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -465,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -511,7 +765,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -525,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -565,7 +820,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -583,13 +838,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPB864GBRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningRealm/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,13 +868,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PPB864GBRF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningRealm/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

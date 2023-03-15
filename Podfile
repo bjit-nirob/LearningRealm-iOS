@@ -8,6 +8,8 @@ target 'LearningRealm' do
 
   # Pods for LearningRealm
   pod 'RealmSwift', '10.33.0'
+  pod 'SnapKit', '5.6.0'
+  pod 'MBProgressHUD', '1.2.0'
 
   target 'LearningRealmTests' do
     inherit! :search_paths

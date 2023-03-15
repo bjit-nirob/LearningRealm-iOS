@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  LearningRealm
+
+  Created by BJIT on 14/3/23.
+  
+*/
+"translate_id_0001" = "Contacts";
+"translate_id_0002" = "Search";
+"translate_id_0003" = "No Contacts";
+"translate_id_0004" = "Edit";
+"translate_id_0005" = "Delete";
+"translate_id_0006" = "New Contact";
+"translate_id_0007" = "First Name";
+"translate_id_0008" = "Last Name";
+"translate_id_0009" = "Mobile Number";
+"translate_id_0010" = "Mob:";
+"translate_id_0011" = "Welcome to my inferno!";
+"translate_id_0012" = "Cancel";
+"translate_id_0013" = "Done";
+"translate_id_0014" = "Empty!";
+"translate_id_0015" = "Please fillup all the fields.";
+"translate_id_0016" = "OK";
+"translate_id_0017" = "";
+"translate_id_0018" = "";
+"translate_id_0019" = "";
+"translate_id_0020" = "";
