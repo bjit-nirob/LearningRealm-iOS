@@ -1,0 +1,9 @@
+{
+    "app_id": "learningrealm-epive",
+    "config_version": 20210101,
+    "name": "LearningRealm",
+    "location": "IN-MB",
+    "provider_region": "aws-ap-south-1",
+    "deployment_model": "LOCAL",
+    "environment": "development"
+}
