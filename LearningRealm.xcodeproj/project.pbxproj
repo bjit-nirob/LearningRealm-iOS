@@ -15,7 +15,7 @@
 		891603D829715BF900C11AF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891603D629715BF900C11AF8 /* LaunchScreen.storyboard */; };
 		891603E329715BF900C11AF8 /* LearningRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603E229715BF900C11AF8 /* LearningRealmTests.swift */; };
 		891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */; };
-		891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */; };
+		891603EF29715BF900C11AF8 /* LearningRealmLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603EE29715BF900C11AF8 /* LearningRealmLaunchTests.swift */; };
 		891603FF29716E3C00C11AF8 /* ContactListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891603FE29716E3C00C11AF8 /* ContactListVM.swift */; };
 		891A6C6D29C0862F00A1ED15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 891A6C6F29C0862F00A1ED15 /* Localizable.strings */; };
 		893D3A3829AC5C2F009CCF0C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */; };
@@ -82,7 +82,7 @@
 		891603E229715BF900C11AF8 /* LearningRealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmTests.swift; sourceTree = "<group>"; };
 		891603E829715BF900C11AF8 /* LearningRealmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningRealmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITests.swift; sourceTree = "<group>"; };
-		891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		891603EE29715BF900C11AF8 /* LearningRealmLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRealmLaunchTests.swift; sourceTree = "<group>"; };
 		891603FE29716E3C00C11AF8 /* ContactListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVM.swift; sourceTree = "<group>"; };
 		891A6C6E29C0862F00A1ED15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		893D3A3729AC5C2F009CCF0C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				891603EC29715BF900C11AF8 /* LearningRealmUITests.swift */,
-				891603EE29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift */,
+				891603EE29715BF900C11AF8 /* LearningRealmLaunchTests.swift */,
 			);
 			path = LearningRealmUITests;
 			sourceTree = "<group>";
@@ -673,7 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891603EF29715BF900C11AF8 /* LearningRealmUITestsLaunchTests.swift in Sources */,
+				891603EF29715BF900C11AF8 /* LearningRealmLaunchTests.swift in Sources */,
 				891603ED29715BF900C11AF8 /* LearningRealmUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
