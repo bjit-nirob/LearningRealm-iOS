@@ -35,7 +35,7 @@ final class AppManager {
     }
     
     func getLanguageCode() -> Language {
-        return .bn
+        return .en
     }
     
 }
