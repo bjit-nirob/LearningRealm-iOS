@@ -7,8 +7,7 @@
 
 import XCTest
 
-// swiftlint:disable type_name
-class LearningRealmUITestsLaunchTests: XCTestCase {
+class LearningRealmLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
