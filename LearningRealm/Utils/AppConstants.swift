@@ -10,7 +10,7 @@ import UIKit
 
 struct AppConstants {
     static let kAccessTokenKey  = "access-token-key"
-    static let realmAppId = "application-0-epbrk"
+    static let realmAppId = "mycontacts-ios-cpzrr"
 }
 
 struct AppColors {
