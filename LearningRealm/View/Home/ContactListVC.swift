@@ -144,7 +144,6 @@ class ContactListVC: BaseViewController {
     
     @objc private func syncBtnTapped() {
         print("syncBtnTapped")
-        RealmManager.shared.sync()
     }
     
     private func editContact(indexPath: IndexPath) {

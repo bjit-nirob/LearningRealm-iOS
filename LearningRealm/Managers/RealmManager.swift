@@ -12,14 +12,51 @@ final class RealmManager {
     static let shared = RealmManager()
     var realm: Realm?
     var app: App?
+    private var initializationComplete: ((Bool) -> Void)?
     
     init() {
-        do {
-            realm = try? Realm()
-            print("Realm path:: \(realm?.configuration.fileURL?.absoluteString ?? "no path")")
-        }
-        
         app = App(id: AppConstants.realmAppId)
+    }
+    
+    func initialize(completion: @escaping (Bool) -> Void) {
+        self.initializationComplete = completion
+        realm = try? Realm()
+        print("Realm path:: \(realm?.configuration.fileURL?.absoluteString ?? "no path")")
+        
+        if let currentUser = app?.currentUser {
+            Task.init(operation: {
+                await self.openSyncedRealm(user: currentUser)
+            })
+            print("currentUser.accessToken \(currentUser.id)")
+        } else {
+            app?.login(credentials: .anonymous) { result in
+                switch result {
+                case .success(let user):
+                    print("got user \(user.id)")
+                    Task.init(operation: {
+                        await self.openSyncedRealm(user: user)
+                    })
+                case .failure(let error):
+                    print("got error \(error.localizedDescription)")
+                    self.initializationComplete?(false)
+                }
+            }
+        }
+    }
+    
+    // Opening a realm and accessing it must be done from the same thread.
+    // Marking this function as `@MainActor` avoids threading-related issues.
+    @MainActor
+    func openSyncedRealm(user: User) async {
+        let configuration = user.flexibleSyncConfiguration(initialSubscriptions: { subscription in
+            if subscription.first(named: "all-contacts") != nil {
+                return
+            } else {
+                subscription.append(QuerySubscription<ContactModel>(name: "all-contacts"))
+            }
+        }, rerunOnOpen: true)
+        self.realm = try? await Realm(configuration: configuration, downloadBeforeOpen: .always)
+        self.initializationComplete?(true)
     }
     
     func addContact(contactModel: ContactModel) {
@@ -60,55 +97,5 @@ final class RealmManager {
         try? realm?.write({
             realm?.delete(contactModel)
         })
-    }
-    
-    @MainActor
-    func sync() {
-        if let currentUser = app?.currentUser {
-            Task.init(operation: {
-                await self.openSyncedRealm(user: currentUser)
-            })
-            print("currentUser.accessToken \(currentUser.id)")
-        } else {
-            app?.login(credentials: .anonymous) { result in
-                switch result {
-                case .success(let user):
-                    print("got user \(user.id)")
-                    Task.init(operation: {
-                        await self.openSyncedRealm(user: user)
-                    })
-                case .failure(let error):
-                    print("got error \(error.localizedDescription)")
-                }
-            }
-        }
-        
-    }
-    
-    // Opening a realm and accessing it must be done from the same thread.
-    // Marking this function as `@MainActor` avoids threading-related issues.
-    @MainActor
-    func openSyncedRealm(user: User) async {
-        do {
-            var config = user.flexibleSyncConfiguration()
-            // Pass object types to the Flexible Sync configuration
-            // as a temporary workaround for not being able to add a
-            // complete schema for a Flexible Sync app.
-            config.objectTypes = [ContactModel.self]
-            let realm = try await Realm(configuration: config, downloadBeforeOpen: .always)
-            // You must add at least one subscription to read and write from a Flexible Sync realm
-            let subscriptions = realm.subscriptions
-            try await subscriptions.update {
-                subscriptions.append(
-                    QuerySubscription<ContactModel> {
-                        print("LR test:: contactId sync: \($0.firstName.persistableValue)")
-                        return $0.firstName != nil
-                    })
-            }
-            self.realm = realm
-//            useRealm(realm: realm, user: user)
-        } catch {
-            print("Error opening realm: \(error.localizedDescription)")
-        }
     }
 }

@@ -47,9 +47,13 @@ class SplashVC: BaseViewController {
     }
     
     private func decideAction() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                appDelegate.setHomeViewController()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            RealmManager.shared.initialize { initialized in
+                if initialized {
+                    appDelegate.setHomeViewController()
+                } else {
+                    self.showAlert(title: "Error", message: "Realm initialization error", actionHandler: nil)
+                }
             }
         }
     }
