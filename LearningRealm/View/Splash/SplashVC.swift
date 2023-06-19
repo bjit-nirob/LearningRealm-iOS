@@ -52,7 +52,9 @@ class SplashVC: BaseViewController {
                 if initialized {
                     appDelegate.setHomeViewController()
                 } else {
-                    self.showAlert(title: "Error", message: "Realm initialization error", actionHandler: nil)
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Error", message: "Realm initialization error", actionHandler: nil)
+                    }
                 }
             }
         }
